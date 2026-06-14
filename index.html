@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Алина Исмаилова — интернет-маркетолог. Разбор сайтов и Яндекс.Карт, упаковка услуг и подготовка проектов к продвижению.">
   <title>Алина Исмаилова — интернет-маркетолог</title>
+  <link rel="icon" type="image/png" href="logo-alina.png">
+  <link rel="apple-touch-icon" href="logo-alina.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -13,7 +15,7 @@
 <body>
   <header class="header">
     <a class="brand" href="#top" aria-label="На главную">
-      <span class="brand-mark">✳</span>
+      <img class="brand-mark" src="logo-alina.png" alt="">
       <span>Алина Исмаилова</span>
     </a>
     <nav class="nav" aria-label="Основная навигация">
@@ -54,7 +56,7 @@
 
       <div class="hero-visual reveal">
         <div class="photo-frame">
-          <img src="alina.jpg" alt="Алина Исмаилова">
+          <img src="alina-hero.png" alt="Алина Исмаилова">
         </div>
         <div class="stat-card">
           <strong>15+</strong>
@@ -177,6 +179,9 @@
           <article class="trust-card reveal"><strong>360°</strong><h3>системный взгляд</h3><p>Анализирую весь путь клиента: от первого касания до заявки.</p></article>
           <article class="trust-card reveal"><strong>Аналитика</strong><h3>ориентир на результат</h3><p>Принимаю решения на основе заявок, конверсии, CPL, источников трафика и качества обращений.</p></article>
         </div>
+        <div class="trust-action reveal">
+          <a class="button trust-button" href="#contact">Связаться</a>
+        </div>
       </div>
     </section>
 
@@ -186,23 +191,26 @@
         <h2>От проблемы к результату</h2>
       </div>
       <div class="cases">
-        <article class="case-card reveal">
+        <article class="case-card reveal" data-case-title="Яндекс.Карты" data-case-number="01">
           <div class="case-title"><span>01</span><h3>Яндекс.Карты</h3></div>
           <p><b>Задача:</b> карточка есть, но не помогает клиенту быстро понять преимущества бизнеса.</p>
           <p><b>Что делаю:</b> анализирую заполнение, конкурентов, фото, услуги, отзывы и коммерческую подачу.</p>
           <p class="case-result"><b>Результат:</b> карточка становится понятнее, полнее и сильнее как точка входа.</p>
+          <button class="case-button" type="button">Кейс</button>
         </article>
-        <article class="case-card reveal">
+        <article class="case-card reveal" data-case-title="Сайт" data-case-number="02">
           <div class="case-title"><span>02</span><h3>Сайт</h3></div>
           <p><b>Задача:</b> сайт есть, но не убеждает оставить заявку.</p>
           <p><b>Что делаю:</b> изучаю первый экран, структуру, офферы, формы, доверительные блоки и путь пользователя.</p>
           <p class="case-result"><b>Результат:</b> конкретный список правок и понимание, что мешает конверсии.</p>
+          <button class="case-button" type="button">Кейс</button>
         </article>
-        <article class="case-card reveal">
+        <article class="case-card reveal" data-case-title="Услуга или продукт" data-case-number="03">
           <div class="case-title"><span>03</span><h3>Услуга или продукт</h3></div>
           <p><b>Задача:</b> бизнесу сложно объяснить, почему клиент должен выбрать именно его.</p>
           <p><b>Что делаю:</b> формулирую ценность, преимущества, аргументы и структуру подачи.</p>
           <p class="case-result"><b>Результат:</b> предложение становится понятнее клиенту и удобнее для продвижения.</p>
+          <button class="case-button" type="button">Кейс</button>
         </article>
       </div>
     </section>
@@ -263,9 +271,25 @@
   </main>
 
   <footer class="footer section-shell">
-    <a class="brand" href="#top"><span class="brand-mark">✳</span><span>Алина Исмаилова</span></a>
+    <a class="brand" href="#top"><img class="brand-mark" src="logo-alina.png" alt=""><span>Алина Исмаилова</span></a>
     <p>Интернет-маркетолог · 2026</p>
   </footer>
+
+  <div class="case-modal" aria-hidden="true">
+    <div class="case-modal-backdrop" data-modal-close></div>
+    <div class="case-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="case-modal-title">
+      <button class="case-modal-close" type="button" data-modal-close aria-label="Закрыть">×</button>
+      <div class="case-modal-heading">
+        <span class="case-modal-number"></span>
+        <div>
+          <p class="eyebrow">Описание кейса</p>
+          <h2 id="case-modal-title"></h2>
+        </div>
+      </div>
+      <div class="case-modal-content"></div>
+      <a class="button button-primary case-modal-contact" href="#contact">Обсудить похожую задачу</a>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
