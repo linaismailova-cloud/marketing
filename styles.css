@@ -221,10 +221,10 @@ p { line-height: 1.7; }
   font-weight: 700;
 }
 .card-link span { font-size: 20px; font-weight: 400; }
-.coral { color: #ff542d; background-image: url("assets/problem-coral.png"); background-position: 4% center; }
-.mint { color: #08a77a; background-image: url("assets/problem-mint.png"); background-position: 34% center; }
-.amber { color: #f08212; background-image: url("assets/problem-amber.png"); background-position: 34% center; }
-.lilac { color: #864eea; background-image: url("assets/problem-lilac.png"); background-position: 30% center; }
+.coral { color: #ff542d; background-image: url("problem-coral.png"); background-position: 4% center; }
+.mint { color: #08a77a; background-image: url("problem-mint.png"); background-position: 34% center; }
+.amber { color: #f08212; background-image: url("problem-amber.png"); background-position: 34% center; }
+.lilac { color: #864eea; background-image: url("problem-lilac.png"); background-position: 30% center; }
 
 .services-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
 .service-card { position: relative; min-height: 340px; padding: 38px; border: 1px solid var(--line); border-radius: var(--radius); background: white; box-shadow: 0 16px 50px rgba(70,45,28,.06); }
