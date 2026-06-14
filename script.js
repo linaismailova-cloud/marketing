@@ -14,6 +14,8 @@ const modalTitle = caseModal.querySelector("#case-modal-title");
 const modalNumber = caseModal.querySelector(".case-modal-number");
 const modalContent = caseModal.querySelector(".case-modal-content");
 const modalCloseButton = caseModal.querySelector(".case-modal-close");
+const imageLightbox = document.querySelector(".image-lightbox");
+const lightboxImage = imageLightbox.querySelector("img");
 
 function closeCaseModal() {
   caseModal.classList.remove("open");
@@ -26,9 +28,26 @@ document.querySelectorAll(".case-button").forEach((button) => {
     const card = button.closest(".case-card");
     modalTitle.textContent = card.dataset.caseTitle;
     modalNumber.textContent = card.dataset.caseNumber;
-    modalContent.innerHTML = [...card.querySelectorAll(":scope > p")]
-      .map((paragraph) => paragraph.outerHTML)
-      .join("");
+    const detailsSource = card.querySelector(".case-details-source");
+    modalContent.innerHTML = detailsSource
+      ? detailsSource.innerHTML
+      : [...card.querySelectorAll(":scope > p")]
+          .map((paragraph) => paragraph.outerHTML)
+          .join("");
+
+    const gallerySource = card.querySelector(".case-gallery-source");
+    if (gallerySource) {
+      modalContent.insertAdjacentHTML("beforeend", gallerySource.innerHTML);
+    }
+
+    modalContent.querySelectorAll("[data-gallery-image]").forEach((item) => {
+      item.addEventListener("click", () => {
+        lightboxImage.src = item.dataset.galleryImage;
+        lightboxImage.alt = item.querySelector("img").alt;
+        imageLightbox.classList.add("open");
+        imageLightbox.setAttribute("aria-hidden", "false");
+      });
+    });
 
     caseModal.classList.add("open");
     caseModal.setAttribute("aria-hidden", "false");
@@ -44,7 +63,19 @@ caseModal.querySelectorAll("[data-modal-close]").forEach((element) => {
 caseModal.querySelector(".case-modal-contact").addEventListener("click", closeCaseModal);
 
 document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && imageLightbox.classList.contains("open")) {
+    imageLightbox.classList.remove("open");
+    imageLightbox.setAttribute("aria-hidden", "true");
+    lightboxImage.src = "";
+    return;
+  }
   if (event.key === "Escape" && caseModal.classList.contains("open")) {
     closeCaseModal();
   }
+});
+
+imageLightbox.addEventListener("click", () => {
+  imageLightbox.classList.remove("open");
+  imageLightbox.setAttribute("aria-hidden", "true");
+  lightboxImage.src = "";
 });
