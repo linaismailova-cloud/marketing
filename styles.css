@@ -261,19 +261,20 @@ p { line-height: 1.7; }
 .case-button {
   align-self: flex-start;
   margin-top: auto;
-  padding: 12px 25px;
-  border: 0;
-  border-radius: 12px;
-  color: white;
-  background: linear-gradient(135deg, #ff7620, #f34308);
-  box-shadow: 0 10px 22px rgba(243,67,8,.2);
+  min-width: 138px;
+  padding: 13px 28px;
+  border: 1.5px solid #ff7546;
+  border-radius: 14px;
+  color: #ff4e20;
+  background: rgba(255,255,255,.72);
+  box-shadow: 0 5px 14px rgba(243,67,8,.06);
   font: inherit;
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 800;
   cursor: pointer;
   transition: transform .2s, box-shadow .2s;
 }
-.case-button:hover { transform: translateY(-2px); box-shadow: 0 14px 28px rgba(243,67,8,.28); }
+.case-button:hover { transform: translateY(-2px); background: #fff7f2; box-shadow: 0 9px 20px rgba(243,67,8,.13); }
 
 .case-modal { position: fixed; z-index: 100; inset: 0; display: grid; place-items: center; padding: 20px; visibility: hidden; opacity: 0; transition: opacity .25s, visibility .25s; }
 .case-modal.open { visibility: visible; opacity: 1; }
