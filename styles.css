@@ -108,8 +108,11 @@ p { line-height: 1.7; }
 .button:hover { transform: translateY(-2px); }
 .button-primary { color: white; background: linear-gradient(135deg, #ff7a17, #ff3d08); box-shadow: 0 15px 30px rgba(255, 79, 13, .22); }
 .button-secondary { border-color: rgba(255, 91, 19, .45); background: rgba(255,255,255,.6); }
-.tags { display: flex; flex-wrap: wrap; gap: 8px; }
-.tags span { padding: 10px 16px; border: 1px solid var(--line); border-radius: 999px; background: rgba(255,255,255,.72); color: #4e575e; font-size: 11px; }
+.tags { display: flex; flex-wrap: wrap; gap: 10px; max-width: 570px; }
+.tags span { min-width: 108px; padding: 12px 20px; border: 1px solid var(--line); border-radius: 999px; background: rgba(255,255,255,.72); color: #4e575e; font-size: 12px; text-align: center; }
+.tags span:nth-child(1),
+.tags span:nth-child(3),
+.tags span:nth-child(6) { min-width: 142px; }
 .tags span:first-child::before { content: ""; display: inline-block; width: 7px; height: 7px; margin-right: 7px; border-radius: 50%; background: var(--orange); }
 
 .hero-visual { position: relative; align-self: stretch; min-height: 570px; }
@@ -368,7 +371,7 @@ body.modal-open { overflow: hidden; }
   .hero-actions { display: grid; }
   .button { width: 100%; min-height: 54px; padding-inline: 20px; }
   .tags { gap: 6px; }
-  .tags span { padding: 8px 11px; font-size: 10px; }
+  .tags span, .tags span:nth-child(1), .tags span:nth-child(3), .tags span:nth-child(6) { min-width: 0; padding: 9px 12px; font-size: 10px; }
   .hero-visual { width: 100%; min-height: 410px; }
   .hero-visual::before { inset: 0; border-radius: 38px; transform: none; }
   .hero-visual::after { right: -45px; bottom: -52px; width: 135px; height: 135px; }
