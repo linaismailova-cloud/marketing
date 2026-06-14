@@ -28,17 +28,12 @@ document.querySelectorAll(".case-button").forEach((button) => {
     const card = button.closest(".case-card");
     modalTitle.textContent = card.dataset.caseTitle;
     modalNumber.textContent = card.dataset.caseNumber;
-    const detailsSource = card.querySelector(".case-details-source");
-    modalContent.innerHTML = detailsSource
-      ? detailsSource.innerHTML
-      : [...card.querySelectorAll(":scope > p")]
-          .map((paragraph) => paragraph.outerHTML)
-          .join("");
-
-    const gallerySource = card.querySelector(".case-gallery-source");
-    if (gallerySource) {
-      modalContent.insertAdjacentHTML("beforeend", gallerySource.innerHTML);
-    }
+    const visualSources = card.querySelectorAll(
+      ".case-gallery-source .case-gallery, .case-details-source .case-gallery, .case-details-source .prototype-preview"
+    );
+    modalContent.innerHTML = visualSources.length
+      ? [...visualSources].map((source) => source.outerHTML).join("")
+      : '<p class="case-gallery-empty">Галерея скоро будет добавлена.</p>';
 
     modalContent.querySelectorAll("[data-gallery-image]").forEach((item) => {
       item.addEventListener("click", () => {

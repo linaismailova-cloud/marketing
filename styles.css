@@ -316,6 +316,9 @@ p { line-height: 1.7; }
 .prototype-image { width: 100%; grid-template-rows: minmax(300px, 520px) auto; }
 .prototype-image img { object-fit: contain; background: #26313a; }
 .case-gallery { margin: 28px 0; }
+.case-modal-content > .case-gallery:first-child,
+.case-modal-content > .prototype-preview:first-child { margin-top: 0; }
+.case-gallery-empty { text-align: center; }
 .case-gallery h3 { margin: 0 0 14px; font-size: 20px; }
 .case-gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
 .case-gallery-item {
