@@ -55,6 +55,8 @@ p { line-height: 1.7; }
 .telegram svg circle, .telegram-icon circle { fill: #2aabee; }
 .telegram svg path, .telegram-icon path { fill: white; }
 .max img { width: 30px; height: 30px; image-rendering: auto; }
+.vk svg circle, .vk-icon circle { fill: #4c75a3; }
+.vk svg path, .vk-icon path { fill: white; }
 
 .hero {
   position: relative;
