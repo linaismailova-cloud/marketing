@@ -35,6 +35,12 @@ document.querySelectorAll(".case-button").forEach((button) => {
       ? [...visualSources].map((source) => source.outerHTML).join("")
       : '<p class="case-gallery-empty">Галерея скоро будет добавлена.</p>';
 
+    modalContent.querySelectorAll("img[data-src]").forEach((image) => {
+      image.src = image.dataset.src;
+      image.loading = "lazy";
+      image.decoding = "async";
+    });
+
     modalContent.querySelectorAll("[data-gallery-image]").forEach((item) => {
       item.addEventListener("click", () => {
         lightboxImage.src = item.dataset.galleryImage;
