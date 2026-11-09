@@ -1,0 +1,9 @@
+{
+  "purpose": "Subtle directional background accents for Promo Group",
+  "source": "Built-in image generation",
+  "prompt": "Transparent abstract kinetic background: 5–8 tapered orange motion trails sweeping diagonally from lower left to upper right, suggesting acceleration. Burnt-orange cores and warm orange edges, restrained glow, negative transparent space. No glass, no ribbons, no smoke, no blobs, no text or symbols. Directional linework suitable for edge accents on white or behind an image on charcoal.",
+  "usage": "Static background only. Strongly reduced CSS opacity; outside content columns or behind the image.",
+  "width": 1536,
+  "height": 1024,
+  "alpha": true
+}

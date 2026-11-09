@@ -167,7 +167,7 @@
 .pg-statement{position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;min-height:306px;margin-top:6px;margin-bottom:80px;padding:52px 36px;border-radius:var(--story-radius);background:#252321;text-align:center}
 .pm-home .pg-statement h2{max-width:1100px;font-size:clamp(32px,3.4vw,48px);line-height:1.3;color:#fff;text-align:center;text-wrap:balance}
 .pg-statement-choice{display:block;margin-top:10px}
-.pg-statement mark{position:relative;display:inline-block;vertical-align:bottom;padding:2px 5px 8px;border:0;border-radius:0;color:transparent;background:transparent;box-shadow:none;-webkit-text-stroke:1px #ffba7a;text-shadow:0 0 7px rgba(255,139,64,.3);animation:pg-letter-glow 7s ease-in-out infinite;animation-play-state:paused}
+.pg-statement mark{position:relative;display:inline-block;vertical-align:bottom;padding:2px 5px 8px;border:0;border-radius:0;color:#fff;background:transparent;box-shadow:none;-webkit-text-stroke:.35px #ffcca5;text-shadow:0 0 4px rgba(255,139,64,.2);animation:pg-letter-glow 7s ease-in-out infinite;animation-play-state:paused}
 .pg-trial-offer{position:relative;overflow:hidden;background:#fff0e3;border:1px solid #ffd0ad}
 .pg-trial-offer::after{content:"";position:absolute;bottom:0;left:25px;right:25px;height:3px;background:var(--story-bright);transform:scaleX(1);transform-origin:left;}
 @keyframes pg-test-line{from{transform:scaleX(.1);opacity:.45}to{transform:scaleX(1);opacity:1}}
@@ -296,12 +296,19 @@
 .pg-problems-intro .pg-problems-meme img{width:100%;height:auto;aspect-ratio:1;object-fit:contain}
 @media(max-width:639px){.pg-problems-intro .pg-problems-meme{width:100%;max-width:360px;justify-self:center}}
 
-/* Neon follows the glyphs themselves; no box surrounds either phrase. */
+/* Original filled lettering keeps a restrained edge glow, without a surrounding box. */
 .pg-statement mark::before{content:none}
 .pg-statement.is-in-view mark{animation-play-state:running}
 .pg-statement.is-motion-paused mark{animation-play-state:paused}
-@keyframes pg-letter-glow{0%,12%,100%{text-shadow:0 0 5px rgba(255,139,64,.28),0 0 12px rgba(255,106,30,.12)}45%,58%{text-shadow:0 0 7px rgba(255,165,95,.6),0 0 20px rgba(255,115,38,.38)}}
-.pg-experience-main strong,.pg-experience-main b{color:transparent;-webkit-text-stroke:1.5px #bd410f;text-shadow:0 0 8px rgba(242,91,19,.2)}
-.pg-experience-main b{-webkit-text-stroke:1px #bd410f;text-shadow:0 0 6px rgba(242,91,19,.2)}
+@keyframes pg-letter-glow{0%,12%,100%{text-shadow:0 0 3px rgba(255,139,64,.14),0 0 7px rgba(255,106,30,.08)}45%,58%{text-shadow:0 0 5px rgba(255,165,95,.35),0 0 11px rgba(255,115,38,.18)}}
+.pg-experience-main strong,.pg-experience-main b{color:#292725;-webkit-text-stroke:.3px #bf4c19;text-shadow:0 0 5px rgba(242,91,19,.15)}
+.pg-experience-main b{-webkit-text-stroke:.2px #bf4c19;text-shadow:0 0 4px rgba(242,91,19,.13)}
 .pg-experience-main>span{color:#292725;font-weight:700}
-@media(prefers-reduced-motion:reduce){.pg-statement mark{animation:none;text-shadow:0 0 6px rgba(255,139,64,.3)}}
+@media(prefers-reduced-motion:reduce){.pg-statement mark{animation:none;text-shadow:0 0 4px rgba(255,139,64,.2)}}
+
+/* The experience block keeps the original filled lettering on charcoal. */
+.pg-experience-main{background:#252321;color:#fff}
+.pg-experience-main strong,.pg-experience-main b{color:#fff;-webkit-text-stroke:.35px #ffb777;text-shadow:0 0 5px rgba(255,139,64,.22)}
+.pg-experience-main b{-webkit-text-stroke:.25px #ffb777}
+.pg-experience-main>span{color:#fff}
+.pg-experience-main .pg-experience-caption{border-color:#5e5046;color:#e7dcd3}
