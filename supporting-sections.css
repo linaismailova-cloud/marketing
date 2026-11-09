@@ -1,5 +1,5 @@
 /* Original tariff content and geometry; colors follow the revised page. */
-.pg-preview.pm-home.pm-page--context :is(.pm-section--context-section-25,.pm-section--context-section-51) .pm-cell { color:#615b57; }
+.pg-preview.pm-home.pm-page--context :is(.pm-section--context-section-25,.pm-section--context-section-51) .pm-cell { color:var(--story-muted); }
 .pg-preview.pm-home.pm-page--context .pm-section--context-section-25 .pm-item-1 > .pm-cell,
 .pg-preview.pm-home.pm-page--context .pm-section--context-section-51 > .pm-surface,
 .pg-preview.pm-home.pm-page--context .pm-section--context-section-51 .pm-carrier,
@@ -63,7 +63,7 @@
 .pg-preview.pm-home.pm-page--context :is(.pm-section--context-section-36,.pm-section--context-section-54) [data-step]:disabled { background:#fff2e8;border-color:#ead8ca;opacity:1;cursor:default; }
 .pg-preview.pm-home.pm-page--context :is(.pm-section--context-section-36,.pm-section--context-section-54) [data-step]:disabled path { stroke:#86746a!important; }
 .pg-preview.pm-home.pm-page--context :is(.pm-section--context-section-36,.pm-section--context-section-54) .pm-review-status {
- width:auto;height:auto;clip-path:none;left:120px;bottom:12px;font:400 14px/20px PromoContextGrotesque,Arial,sans-serif;color:#615b57;
+ width:auto;height:auto;clip-path:none;left:120px;bottom:12px;font:400 14px/20px PromoContextGrotesque,Arial,sans-serif;color:var(--story-muted);
 }
 @media(min-width:1200px){.pg-preview.pm-home.pm-page--context > .pm-section--context-section-36 {display:grid;}}
 @media(max-width:1199px){
