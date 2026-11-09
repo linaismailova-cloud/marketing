@@ -9,9 +9,10 @@
 <link rel="icon" href="https://pr-up.ru/assets/pg-logo-mark.png">
 <link rel="preconnect" href="https://pr-up.ru">
 <link rel="stylesheet" href="./promo-source.css">
-<link rel="stylesheet" href="./preview.css?v=20261109-4">
-<link rel="stylesheet" href="./refinement.css?v=20261109-5">
-<script src="./preview.js?v=20261109-3" defer></script>
+<link rel="stylesheet" href="./preview.css?v=20261109-6">
+<link rel="stylesheet" href="./refinement.css?v=20261109-6">
+<link rel="stylesheet" href="./supporting-sections.css?v=20261109-6">
+<script src="./preview.js?v=20261109-6" defer></script>
 </head>
 <body class="pg-unified">
 <svg xmlns="http://www.w3.org/2000/svg" hidden aria-hidden="true">
@@ -38,14 +39,15 @@
       </div>
       <p class="terms muted">1 ₽ за работу агентства. Рекламный бюджет оплачивается отдельно.</p>
     </section>
-<section class="pg-story pg-statement" aria-labelledby="thesis-title">
-  <h2 id="thesis-title">Продолжайте терять клиентов <span>или работайте с нами</span></h2>
+<section class="pg-story pg-statement" aria-labelledby="thesis-title" data-ambient-motion>
+  <h2 id="thesis-title">Продолжайте терять клиентов <span class="pg-statement-choice">или <mark>работайте с нами</mark></span></h2>
+  <button class="pg-motion-toggle" type="button" aria-label="Остановить анимацию подсветки" aria-pressed="false" title="Остановить анимацию подсветки"><span aria-hidden="true"></span></button>
 </section>
 
 <section class="pg-story pg-trial" id="promo-conditions" aria-labelledby="promo-conditions-title">
   <div class="pg-trial-head">
     <h2 id="promo-conditions-title">Проверьте нас в работе.<span class="story-accent">Потом решайте</span></h2>
-    <div class="pg-trial-offer">
+    <div class="pg-trial-offer" data-ambient-motion>
       <p class="pg-trial-price"><strong>10 дней</strong><span>за 1 ₽</span></p>
       <p>Стоимость работы агентства. Рекламный бюджет оплачивается отдельно.</p>
     </div>
@@ -58,14 +60,19 @@
 </section>
 
 <section class="pg-story pg-experience" aria-labelledby="experience-title">
-  <h2 class="pg-sr-only" id="experience-title">Promo Group в цифрах</h2>
-  <div class="pg-experience-main"><strong>19</strong><span><b>лет</b>в интернет-маркетинге</span></div>
-  <dl class="pg-experience-facts">
-    <div><dt>1500+</dt><dd>проектов выполнено</dd></div>
-    <div><dt>250<small>тыс</small>+</dt><dd>заявок привели нашим клиентам</dd></div>
-    <div><dt>10<small>тыс</small>+</dt><dd>настроенных рекламных кампаний</dd></div>
-    <div><dt>85%</dt><dd>клиентов с нами более 5 лет</dd></div>
-  </dl>
+  <div class="pg-experience-head">
+    <h2 id="experience-title">Опыт, который помогает<br>приводить клиентов</h2>
+    <p>Масштаб работы — в результатах.<br>Доверие — в долгих отношениях.</p>
+  </div>
+  <div class="pg-experience-grid">
+    <div class="pg-experience-main"><p><strong>19</strong> <b>лет</b></p><span>в интернет-маркетинге</span><p class="pg-experience-caption">Инструменты меняются.<br>Наш фокус — ваши клиенты.</p></div>
+    <dl class="pg-experience-facts">
+      <div><dt>250<small>тыс</small><span>+</span></dt><dd>заявок привели нашим клиентам</dd></div>
+      <div><dt>1500<span>+</span></dt><dd>проектов выполнено</dd></div>
+      <div><dt>10<small>тыс</small><span>+</span></dt><dd>настроенных рекламных кампаний</dd></div>
+      <div class="pg-experience-loyalty"><dt>85<span>%</span></dt><dd>клиентов с нами <strong>более 5 лет</strong></dd></div>
+    </dl>
+  </div>
 </section>
 
 <section class="pg-story pg-ai" id="ai" aria-labelledby="ai-title" data-figma-source="2:29">
@@ -91,9 +98,10 @@
     <figure><img src="./assets/loss-flow-v1.webp" width="1448" height="1086" alt="" loading="lazy"></figure>
   </div>
   <ul class="pg-problem-list">
-    <li><h3>Реклама крутится,<br>а заявок мало</h3><p>Покажем, куда уходит бюджет: площадки без заявок, мусорные запросы, слабые объявления.</p></li>
-    <li><h3>Заявки есть,<br>а продаж не видно</h3><p>Свяжем Директ, звонки и CRM, чтобы видеть источники продаж. Объём настройки аналитики согласуем отдельно.</p></li>
-    <li><h3>Подрядчик пропал<br>или держит кабинет у себя</h3><p>Реклама — в вашем кабинете. Наведём порядок в целях, минус-фразах, площадках и отчётах.</p></li>
+    <li><h3>Реклама крутится,<br>а <mark>заявок мало</mark></h3><p>Покажем, куда уходит бюджет: площадки без заявок, мусорные запросы, слабые объявления.</p></li>
+    <li><h3>Заявки есть,<br>а <mark>продаж не видно</mark></h3><p>Свяжем Директ, звонки и CRM, чтобы видеть источники продаж. Объём настройки аналитики согласуем отдельно.</p></li>
+    <li><h3><mark>Подрядчик пропал</mark><br>или держит кабинет у себя</h3><p>Реклама — в вашем кабинете. Наведём порядок в целях, минус-фразах, площадках и отчётах.</p></li>
+    <li><h3><mark>Нет сайта</mark><br>или <mark>он не продаёт</mark></h3><p>Поможем доработать существующую или создать новую посадочную страницу, чтобы посетителю было проще оставить заявку.</p></li>
   </ul>
 </section>
 
@@ -105,7 +113,7 @@
       <div class="pg-reason-body"><p>В основе решений — прибыль компании. Согласуем показатели и оцениваем, как рекламные кампании помогают получать целевые обращения и продажи.</p></div>
     </details>
     <details class="pg-reason">
-      <summary><span class="pg-reason-title"><strong class="pg-reason-heading">Видно, что приносит заказы</strong><span class="pg-reason-teaser">Связываем рекламные источники с заявками и продажами через CRM.</span></span><span class="pg-reason-toggle" aria-hidden="true"></span></summary>
+      <summary><span class="pg-reason-title"><strong class="pg-reason-heading">Показываем, что приносит заказы</strong><span class="pg-reason-teaser">Связываем рекламные источники с заявками и продажами через CRM.</span></span><span class="pg-reason-toggle" aria-hidden="true"></span></summary>
       <div class="pg-reason-body"><p>Разрабатываем карту целей в веб-аналитике и оптимизируем рекламу по обращениям и сделкам. Если нужна сквозная аналитика, отдельно согласуем связь Директа, звонков и CRM.</p></div>
     </details>
     <details class="pg-reason">
@@ -119,20 +127,7 @@
   </div>
 </section>
 
-<section class="pg-preview-block pg-preview-profit" aria-labelledby="profit-title">
-      <div>
-        <h2 id="profit-title">Что реклама приносит бизнесу</h2>
-        <p class="muted">Берём за основу ваш средний чек, маржу и конверсию в продажу. По ним определяем, сколько можно платить за привлечение клиента.</p>
-      </div>
-      <dl class="metrics">
-        <div><dt>CPL</dt><dd>Стоимость заявки</dd></div>
-        <div><dt>CAC</dt><dd>Стоимость привлечения клиента</dd></div>
-        <div><dt>ДРР</dt><dd>Доля рекламных расходов</dd></div>
-        <div><dt>ROMI</dt><dd>Окупаемость маркетинга</dd></div>
-      </dl>
-    </section>
-
-    <div class="pg-preview-anchor" id="cases"></div>
+<div class="pg-preview-anchor" id="cases"></div>
 <section class="pm-section pm-section--context-section-18" aria-label="Кейсы Promo Group"><style>.pm-home .pm-section--context-section-18 .pm-gallery[data-managed-cases] .pm-gallery-image{background-image:url("https://pr-up.ru/upload/iblock/d95/fx05nbi9liyru6mu1zhojo004rsjou3x/10.png")}</style><div class="pm-surface" aria-hidden="true"><div class="pm-carrier"></div></div>
 <div class="pm-item pm-item-1 pm-item--gallery"><div class="pm-gallery" data-gallery data-slide-duration="300" data-managed-cases data-case-links='["","","","","","","","","","","",""]' data-case-titles='["Контекстная реклама — кейс 1 (компьютер)","Контекстная реклама — кейс 2 (компьютер)","Контекстная реклама — кейс 3 (компьютер)","Контекстная реклама — кейс 4 (компьютер)","Контекстная реклама — кейс 5 (компьютер)","Контекстная реклама — кейс 6 (компьютер)","Контекстная реклама — кейс 7 (компьютер)","Контекстная реклама — кейс 8 (компьютер)","Контекстная реклама — кейс 9 (компьютер)","Контекстная реклама — кейс 10 (компьютер)","Контекстная реклама — кейс 11 (компьютер)","Контекстная реклама — кейс 12 (компьютер)"]'><div class="pm-gallery-stage"><div class="pm-gallery-image" role="img" aria-label="Контекстная реклама — кейс 1 (компьютер)" data-image-url="https://pr-up.ru/upload/iblock/d95/fx05nbi9liyru6mu1zhojo004rsjou3x/10.png"></div></div><span hidden data-slides>["https://pr-up.ru/upload/iblock/d95/fx05nbi9liyru6mu1zhojo004rsjou3x/10.png", "https://pr-up.ru/upload/iblock/7f1/1v102heesnj3zo0zkass4cawfio2hlyq/11.png", "https://pr-up.ru/upload/iblock/802/oe0r3txyt3wq0l4edhfu8tcqk3gm06hv/12.png", "https://pr-up.ru/upload/iblock/649/vjfre8cbymvvsp0t5fv1e54ncgkzm8n4/13.png", "https://pr-up.ru/upload/iblock/f67/vgexerr63v8lyno5j6zn9dagpexiqf5z/15.png", "https://pr-up.ru/upload/iblock/856/rgnvbwbqu2m3rha0eu0bceh8qqnnx6mp/16.png", "https://pr-up.ru/upload/iblock/bac/0guaxk98y297yjmc5lyktcf242ege0x7/17.png", "https://pr-up.ru/upload/iblock/480/ffrcig7i8x96djk574ljrr5rr05rndpw/18.png", "https://pr-up.ru/upload/iblock/ebb/w89s0wy1wumkzxr5aiugbenjiil6g4ic/19.png", "https://pr-up.ru/upload/iblock/439/yjayqprssybj7mhdayst7eibjlp6dadf/20.png", "https://pr-up.ru/upload/iblock/a48/tpihs39sc3jq342uamloraqlqms96l1c/21.png", "https://pr-up.ru/upload/iblock/10d/n0dgk6x4wprrmk5f4y3u262rr9rubaw2/14.png"]</span><button class="pm-gallery-prev" type="button" data-step="-1" aria-label="Предыдущий слайд"><svg viewBox="0 0 94 94" fill="none"><path d="M63 47.917H30" stroke="black" vector-effect="non-scaling-stroke" style="stroke-width: 3px; stroke: rgb(255, 131, 49);"></path><path d="M46.917 64L63 47.917L46.917 31.834" stroke="black" vector-effect="non-scaling-stroke" style="stroke-width: 3px; stroke: rgb(255, 131, 49);"></path></svg></button><button class="pm-gallery-next" type="button" data-step="1" aria-label="Следующий слайд"><svg viewBox="0 0 94 94" fill="none"><path d="M63 47.917H30" stroke="black" vector-effect="non-scaling-stroke" style="stroke-width: 3px; stroke: rgb(255, 131, 49);"></path><path d="M46.917 64L63 47.917L46.917 31.834" stroke="black" vector-effect="non-scaling-stroke" style="stroke-width: 3px; stroke: rgb(255, 131, 49);"></path></svg></button></div></div>
 <div class="pm-item pm-item-2"><div class="pm-cell">КЕЙСЫ</div></div>

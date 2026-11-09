@@ -108,3 +108,31 @@ for (const gallery of document.querySelectorAll('[data-review-carousel]')) {
   renderLetters();
 }
 
+
+// Decorative loops run only while their section is visible, with a static CSS fallback.
+const ambientSections = [...document.querySelectorAll('[data-ambient-motion]')];
+const ambientVisibility = new Map();
+function syncAmbientMotion() {
+  for (const section of ambientSections) {
+    section.classList.toggle('is-in-view', Boolean(ambientVisibility.get(section)) && !document.hidden);
+  }
+}
+const ambientObserver = new IntersectionObserver(entries => {
+  for (const entry of entries) {
+    ambientVisibility.set(entry.target, entry.isIntersecting);
+    if (entry.isIntersecting) entry.target.classList.add('has-entered');
+  }
+  syncAmbientMotion();
+}, { threshold: 0.15 });
+for (const section of ambientSections) ambientObserver.observe(section);
+document.addEventListener('visibilitychange', syncAmbientMotion);
+
+for (const button of document.querySelectorAll('.pg-motion-toggle')) {
+  button.addEventListener('click', () => {
+    const paused = button.closest('.pg-statement').classList.toggle('is-motion-paused');
+    button.setAttribute('aria-pressed', String(paused));
+    const label = paused ? 'Включить анимацию подсветки' : 'Остановить анимацию подсветки';
+    button.setAttribute('aria-label', label);
+    button.title = label;
+  });
+}
