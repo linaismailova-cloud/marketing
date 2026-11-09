@@ -5,16 +5,16 @@
 @font-face{font-family:PromoSans;src:url("./tilda-sans.woff2") format("woff2");font-weight:300 900;font-display:swap}
 
 :root{
-  --preview-orange:#ff8331;
-  --preview-orange-ink:#c84b12;
-  --preview-ink:#292725;
-  --preview-muted:#5b5b5b;
-  --preview-heading:#4a4541;
-  --preview-panel:#f9f5f2;
-  --preview-method-panel:#ffeadc;
-  --preview-edge:#f1cdbd;
-  --preview-gradient:linear-gradient(180deg,#ff8331 0%,#eb4a3f 100%);
-  --preview-action-gradient:linear-gradient(180deg,#c94b10 0%,#c83b2c 100%);
+  --preview-orange:var(--brand-orange);
+  --preview-orange-ink:var(--brand-orange);
+  --preview-ink:var(--brand-ink);
+  --preview-muted:var(--brand-muted);
+  --preview-heading:var(--brand-ink);
+  --preview-panel:var(--brand-soft);
+  --preview-method-panel:var(--brand-soft);
+  --preview-edge:var(--brand-line);
+  --preview-gradient:linear-gradient(180deg,var(--brand-orange) 0%,var(--brand-orange) 100%);
+  --preview-action-gradient:linear-gradient(180deg,var(--brand-orange) 0%,var(--brand-orange) 100%);
   --preview-width:min(1200px,100% - 48px);
   --preview-space:clamp(54px,6vw,80px);
 }
@@ -23,13 +23,13 @@ body>svg[hidden]{display:none!important}
 .cp-skip:not(:focus){clip-path:inset(100%)}
 .pg-preview.pm-home{display:block}
 .pg-preview [hidden]{display:none!important}
-.pg-preview :focus-visible{outline:2px solid #292725;outline-offset:4px}
+.pg-preview :focus-visible{outline:2px solid var(--brand-ink);outline-offset:4px}
 .pg-preview-anchor{height:0}
 .pg-preview .pg-promo-summary{margin-inline:auto}
 .pg-preview .pg-promo-summary.pg-promo-proof{scroll-margin-top:0}
 .pg-preview .pg-proof__metrics{align-content:start}
 .pg-preview .pg-proof__benefits h3{margin:0}
-.pg-preview-day{display:block;color:#bc4700;font-size:.65em;margin-bottom:.35em}
+.pg-preview-day{display:block;color:var(--brand-orange);font-size:.65em;margin-bottom:.35em}
 
 /* The new sections follow the original page's width, typography and surfaces. */
 .pg-preview-thesis,.pg-preview-block{
@@ -51,7 +51,7 @@ body>svg[hidden]{display:none!important}
 .pg-preview-block .icon{width:24px;height:24px;flex:none;fill:none;stroke:currentColor;stroke-width:1.65;stroke-linecap:round;stroke-linejoin:round}
 .pg-preview-block .icon-arrow{width:18px;height:18px}
 .pg-preview-block .text-link{display:inline-flex;align-items:center;gap:7px;color:var(--preview-ink);font-size:15px;text-underline-offset:.25em}
-.pg-preview-block .text-link:hover{color:#b44300}
+.pg-preview-block .text-link:hover{color:var(--brand-orange)}
 
 /* First-version hero: text and actions, with the source page's typography and buttons. */
 .pg-preview .pg-preview-hero{margin-block:0;padding:55px 0 58px;text-align:center}
@@ -80,7 +80,7 @@ body>svg[hidden]{display:none!important}
 .pg-preview-block .pain>.icon{color:var(--preview-orange);width:28px;height:28px}
 
 .pg-preview-block .method-grid{align-items:start}
-.pg-preview-block .method{min-width:0;border:1px solid #efbd9c;border-radius:20px;background:var(--preview-method-panel)}
+.pg-preview-block .method{min-width:0;border:1px solid var(--brand-line);border-radius:20px;background:var(--preview-method-panel)}
 .pg-preview-block summary{cursor:pointer;list-style:none}
 .pg-preview-block summary::-webkit-details-marker{display:none}
 .pg-preview-block .method summary{display:grid;grid-template-columns:24px minmax(0,1fr) 18px;align-items:start;gap:12px;padding:25px}
@@ -91,11 +91,11 @@ body>svg[hidden]{display:none!important}
 .pg-preview-block .method-lead{margin-top:8px;font-size:16px;color:var(--preview-muted)}
 .pg-preview-block .method>p{margin:0 25px 20px 61px;border-top:1px solid var(--preview-edge);padding-top:13px;color:var(--preview-muted);font-size:16px}
 .pg-preview-block details[open] summary .vertical{display:none}
-.pg-preview-block .method summary:hover .method-title{color:#b44300}
+.pg-preview-block .method summary:hover .method-title{color:var(--brand-orange)}
 .pg-preview-block .disclosure{border-bottom:1px solid #ddd}
 .pg-preview-block .disclosure summary{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:58px;padding:15px 0;font-size:17px;font-weight:600}
 .pg-preview-block .disclosure summary .icon{width:18px;height:18px;color:var(--preview-orange-ink)}
-.pg-preview-block .disclosure summary:hover{color:#b44300}
+.pg-preview-block .disclosure summary:hover{color:var(--brand-orange)}
 .pg-preview-block .disclosure>p{padding:0 30px 18px 0;max-width:67ch;color:var(--preview-muted);font-size:16px}
 .pg-preview-block .ai{margin-top:16px}
 
