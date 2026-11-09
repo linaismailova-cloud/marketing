@@ -273,3 +273,25 @@
 .pg-preview .pg-motion-toggle:focus-visible{outline-color:#ffb177}
 .pg-statement.is-motion-paused mark::before{animation-play-state:paused}
 @media(prefers-reduced-motion:reduce){.pg-motion-toggle{display:none}.pg-trial-offer.has-entered::after{animation:none}}
+
+/* Morpheus makes the choice tangible; the headline remains live text. */
+.pg-statement--morpheus{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:16px;min-height:340px;padding:44px 36px 44px 46px;overflow:visible;isolation:isolate}
+.pm-home .pg-statement--morpheus h2{position:relative;z-index:1;font-size:clamp(32px,3.2vw,46px);line-height:1.22;text-align:left;text-wrap:initial}
+.pg-statement--morpheus .pg-statement-choice{margin-top:20px}
+.pg-statement--morpheus mark{margin-top:6px;padding:3px 12px 8px}
+.pg-statement--morpheus .pg-statement-visual{position:relative;align-self:end;min-width:0;width:calc(100% + 28px);margin:-96px -18px -44px -10px}
+.pg-statement--morpheus .pg-statement-visual img{width:100%;max-width:none;height:auto;filter:drop-shadow(2px 0 0 #ffa168) drop-shadow(-2px 0 0 #ffa168) drop-shadow(0 -2px 0 #ffa168) drop-shadow(0 2px 0 #ffa168) drop-shadow(0 14px 18px rgba(0,0,0,.18))}
+.pg-statement--morpheus .pg-motion-toggle{z-index:2}
+@media(max-width:850px){
+ .pg-statement--morpheus{grid-template-columns:1fr;gap:22px;min-height:0;padding:34px 28px 30px;margin-bottom:108px}
+ .pm-home .pg-statement--morpheus h2{max-width:620px;justify-self:center;text-align:center;font-size:clamp(30px,5vw,40px);text-wrap:balance}
+ .pg-statement--morpheus .pg-statement-choice{margin-top:10px}
+ .pg-statement--morpheus .pg-statement-visual{width:min(580px,100%);justify-self:center;margin:0 0 -54px}
+}
+@media(max-width:639px){
+ .pg-statement--morpheus{padding:28px 16px 30px;gap:20px;border-radius:24px;margin-bottom:83px}
+ .pm-home .pg-statement--morpheus h2{font-size:clamp(25px,6.8vw,33px);line-height:1.22}
+ .pg-statement--morpheus mark{padding:3px 7px 7px;border-radius:8px}
+ .pg-statement--morpheus .pg-statement-visual{width:100%}
+ .pg-statement--morpheus .pg-motion-toggle{right:12px;bottom:8px;width:36px;height:36px}
+}
