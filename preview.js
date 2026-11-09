@@ -47,7 +47,7 @@ for (const gallery of document.querySelectorAll('[data-gallery]')) {
 
   function renderSlide() {
     image.style.backgroundImage = `url("${slides[index]}")`;
-    image.setAttribute('aria-label', cases && index === 0 ? 'Кейс «Мелодия сна»' : `${cases ? 'Кейсы Promo Group' : label}. Слайд ${index + 1} из ${slides.length}`);
+    image.setAttribute('aria-label', `${cases ? 'Кейсы Promo Group' : label}. Слайд ${index + 1} из ${slides.length}`);
   }
 
   for (const control of gallery.querySelectorAll('[data-step]')) {
@@ -68,6 +68,13 @@ for (const gallery of document.querySelectorAll('[data-gallery]')) {
     });
   }
   renderSlide();
+}
+
+for (const link of document.querySelectorAll('[data-preview-document]')) {
+  link.addEventListener('click', event => {
+    event.preventDefault();
+    showImage(link.href, link.querySelector('img')?.alt ?? 'Документ Promo Group');
+  });
 }
 
 for (const gallery of document.querySelectorAll('[data-review-carousel]')) {
