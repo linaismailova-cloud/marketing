@@ -1,0 +1,8 @@
+{
+  "purpose": "High-resolution restoration of the user-provided rake meme for the problems section",
+  "source": "User-provided image",
+  "method": "Built-in image generation edit; WebP encoding for the page",
+  "prompt": "Faithful high-resolution restoration of the supplied meme: a smooth white/light gray faceless 3D mannequin running from left to right, raised forward foot about to land on an upright-toothed garden rake lying on white ground. Preserve the whole figure, complete rake, pose, camera, white background and early-2000s stock-3D aesthetic. Improve sharpness and clean silhouettes. Subtle ground shadows. No words, captions, logos, extra objects, orange recoloring or border.",
+  "width": 1254,
+  "height": 1254
+}

@@ -1,0 +1,8 @@
+{
+  "purpose": "Quiet glass accents behind the trial, reasons and closing contact area",
+  "method": "Built-in image generation with a transparent background",
+  "prompt": "One isolated airy sculptural ribbon made from clear transparent glass, a long smooth open S turning gently in space. Thin amber-orange edges, optically clear body with light peach reflections, realistic refraction, polished edges, soft product-render lighting. Wide 3:2 composition, entire object inside frame, ample transparent breathing room. No letters, logos, symbols, particles, floor, backdrop or opaque plastic. Restrained orange highlights only.",
+  "width": 1536,
+  "height": 1024,
+  "alpha": true
+}
