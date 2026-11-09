@@ -1,390 +1,156 @@
 <!doctype html>
 <html lang="ru">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="noindex, nofollow">
-  <meta name="description" content="Promo Group настроит и запустит Яндекс Директ за 10 дней. Работа агентства в тестовый период стоит 1 ₽.">
-  <meta name="theme-color" content="#fffdfb">
-  <title>Яндекс Директ за 10 дней · Promo Group</title>
-  <link rel="icon" href="https://pr-up.ru/assets/pg-logo-mark.png">
-  <link rel="preconnect" href="https://pr-up.ru" crossorigin>
-  <style>
-    @font-face {
-      font-family: Promo;
-      src: url("./tilda-sans.woff2") format("woff2");
-      font-weight: 300 900;
-      font-display: swap;
-    }
-
-    :root {
-      --ink: #262220;
-      --muted: #645b55;
-      --accent: #b94416;
-      --display-accent: #d84b1b;
-      --peach: #fff2e8;
-      --line: #eadbd2;
-      --white: #fffdfb;
-      --fire: linear-gradient(152deg, #ff862f, #ed553d 73%, #e84a3d);
-      --radius: 26px;
-      --gutter: clamp(16px, 4.4vw, 64px);
-      --rhythm: clamp(64px, 8vw, 116px);
-    }
-
-    *, *::before, *::after { box-sizing: border-box; }
-    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
-    body { margin: 0; background: var(--white); color: var(--ink); font: 400 17px/1.52 Promo, Arial, sans-serif; }
-    ::selection { background: #ffd5bd; color: var(--ink); }
-    :focus-visible { outline: 3px solid var(--accent); outline-offset: 5px; }
-    img, svg { display: block; }
-    img { max-width: 100%; height: auto; }
-    a { color: inherit; text-underline-offset: .22em; }
-    p, h1, h2, h3, dl, dd, ul, ol, figure { margin: 0; }
-    h1, h2, h3 { font-weight: 750; line-height: 1.04; letter-spacing: -.035em; }
-    h2 { font-size: clamp(36px, 5vw, 66px); text-wrap: balance; }
-    h3 { font-size: clamp(20px, 2.2vw, 27px); }
-    [hidden] { display: none !important; }
-    .frame { width: min(1312px, 100% - var(--gutter) * 2); margin-inline: auto; }
-    .section { margin-block-start: var(--rhythm); }
-    .muted { color: var(--muted); }
-    .accent { color: var(--accent); }
-    .nowrap { white-space: nowrap; }
-    .icon { width: 24px; height: 24px; flex: none; stroke: currentColor; fill: none; stroke-width: 1.65; stroke-linecap: round; stroke-linejoin: round; }
-    .icon-arrow { width: 18px; height: 18px; }
-    .skip { position: fixed; z-index: 10; top: 10px; left: 10px; transform: translateY(-160%); }
-    .skip:focus { transform: none; }
-
-    .topbar { position: sticky; top: 0; z-index: 3; background: var(--white); border-bottom: 1px solid var(--line); }
-    .topbar-inner, .foot-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 72px; }
-    .brand { display: inline-flex; align-items: center; gap: 8px; flex: none; }
-    .brand img:first-child { width: 25px; }
-    .brand img:last-child { width: 142px; }
-    .nav { display: flex; gap: clamp(18px, 3vw, 42px); }
-    .nav a, .phone { text-decoration: none; font-size: 15px; font-weight: 650; }
-    .nav a:hover, .phone:hover, .text-link:hover { color: var(--accent); }
-    .phone { white-space: nowrap; }
-
-    .hero { padding-block: clamp(68px, 9.5vw, 138px) clamp(58px, 7vw, 100px); text-align: center; }
-    .hero h1 { max-width: 1000px; margin-inline: auto; font-size: clamp(45px, 8.15vw, 112px); text-wrap: balance; }
-    .hero-price { color: var(--display-accent); }
-    .hero p { max-width: 650px; margin: 25px auto 0; font-size: clamp(17px, 2.1vw, 22px); }
-    .actions { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 10px; margin-top: 30px; }
-    .button {
-      display: inline-flex; min-height: 54px; align-items: center; justify-content: center; gap: 10px; padding: 13px 23px;
-      border: 1px solid transparent; border-radius: 100px; font-size: 16px; font-weight: 750; line-height: 1.2; text-decoration: none;
-      transition: background-color .18s ease, border-color .18s ease, color .18s ease;
-    }
-    .button-primary { background: var(--accent); color: white; }
-    .button-primary:hover { background: #92310d; }
-    .button-secondary { border-color: #cbb4a6; background: var(--white); }
-    .button-secondary:hover { background: var(--peach); border-color: var(--accent); }
-    .button-white { background: white; color: #7b2b13; }
-    .button-white:hover { background: #fff0e6; }
-    .text-link { display: inline-flex; align-items: center; gap: 7px; width: fit-content; font-size: 15px; font-weight: 700; }
-    .hero .terms { margin-top: 12px; font-size: 14px; }
-
-    .trial {
-      padding: clamp(23px, 5vw, 66px);
-      border: 1px solid #f0ded0; border-radius: var(--radius);
-      background: radial-gradient(ellipse at 100% 0%, #ffe1cd 0%, transparent 58%), #fff5ed;
-    }
-    .trial-head { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); align-items: center; gap: 30px 7%; }
-    .trial-head h2 { text-wrap: initial; }
-    .trial-head p, .section-intro { margin-top: 16px; max-width: 59ch; color: var(--muted); }
-    .numbers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; align-items: start; }
-    .numbers div + div { border-left: 1px solid #dfbcaa; padding-left: clamp(12px, 1.6vw, 22px); }
-    .numbers dt { font-weight: 800; font-size: clamp(23px, 3.25vw, 43px); line-height: 1.06; white-space: nowrap; letter-spacing: -.035em; }
-    .numbers dd { margin-top: 8px; font-size: 13px; line-height: 1.24; color: var(--muted); }
-    .timeline { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; padding: 0; margin-top: 37px; list-style: none; }
-    .timeline li { border-top: 1px solid #e0bca9; padding-top: 20px; }
-    .day { display: flex; align-items: center; gap: 8px; margin-bottom: 14px; font-size: 14px; font-weight: 750; color: var(--accent); }
-    .day .icon { width: 21px; height: 21px; }
-    .timeline h3 { margin-bottom: 8px; }
-    .timeline p { max-width: 34ch; font-size: 16px; color: var(--muted); }
-
-    .pain-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-top: 28px; }
-    .pain { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 18px; align-items: start; padding: clamp(20px, 3vw, 34px); border: 1px solid var(--line); border-radius: 18px; background: white; }
-    .pain h3 { margin-bottom: 9px; }
-    .pain p { color: var(--muted); font-size: 16px; max-width: 48ch; }
-    .pain .icon { color: var(--accent); width: 30px; height: 30px; }
-
-    .method-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; gap: 12px; margin-top: 28px; }
-    .method { min-width: 0; border-radius: 18px; background: #fbefe7; }
-    .method:nth-child(2) { background: #fbe8dc; }
-    .method:nth-child(3) { background: #fbdfcf; }
-    .method:nth-child(4) { background: #f9d6c2; }
-    .method summary {
-      display: grid; grid-template-columns: 24px minmax(0, 1fr) 18px; gap: 10px 13px;
-      align-items: start; padding: clamp(16px, 2.45vw, 29px);
-      border-radius: inherit; cursor: pointer; list-style: none;
-    }
-    .method summary::-webkit-details-marker { display: none; }
-    .method summary:hover .method-title { color: var(--accent); }
-    .method .icon { color: var(--accent); }
-    .method .toggle { width: 18px; height: 18px; margin-top: 4px; }
-    .method-title, .method-lead { display: block; }
-    .method-title { font-size: clamp(20px, 2.1vw, 28px); font-weight: 750; line-height: 1.08; letter-spacing: -.025em; }
-    .method-lead, .method p { font-size: 16px; color: #493b33; }
-    .method-lead { margin-top: 7px; }
-    .method p { max-width: 59ch; margin: 0 clamp(16px, 2.45vw, 29px) 0 calc(clamp(16px, 2.45vw, 29px) + 37px); border-top: 1px solid #dfbca9; padding: 12px 0 19px; }
-    .disclosure { border-bottom: 1px solid var(--line); }
-    .disclosure summary { display: flex; align-items: center; justify-content: space-between; gap: 20px; min-height: 54px; padding: 12px 0; cursor: pointer; list-style: none; font-size: 17px; font-weight: 700; }
-    .disclosure summary::-webkit-details-marker { display: none; }
-    .disclosure summary:hover { color: var(--accent); }
-    .disclosure summary .icon { width: 19px; height: 19px; color: var(--accent); }
-    details[open] summary .vertical { display: none; }
-    .disclosure p { max-width: 67ch; padding: 0 32px 18px 0; color: var(--muted); }
-    .ai { margin-top: 12px; }
-
-    .profit { display: grid; grid-template-columns: 1.12fr 1fr; gap: 25px 8%; align-items: center; border-block: 1px solid var(--line); padding-block: clamp(25px, 4vw, 52px); }
-    .profit h2 { font-size: clamp(34px, 4.6vw, 57px); text-wrap: initial; }
-    .profit p { margin-top: 12px; max-width: 48ch; }
-    .metrics { display: grid; grid-template-columns: repeat(2, 1fr); gap: 13px 24px; }
-    .metrics div { border-top: 1px solid var(--line); padding-top: 10px; }
-    .metrics dt { font-weight: 800; }
-    .metrics dd { color: var(--muted); font-size: 14px; }
-
-    .case { margin-top: 26px; display: grid; grid-template-columns: 1.05fr 1fr; align-items: center; gap: clamp(22px, 5vw, 60px); padding: clamp(22px, 5vw, 60px); border-radius: var(--radius); background: #fff2e8; }
-    .case-name { color: #734f3c; font-size: 15px; font-weight: 700; }
-    .case h3 { max-width: 14ch; margin-top: 11px; font-size: clamp(32px, 5.6vw, 69px); }
-    .case p + p, .case h3 + p { margin-top: 14px; }
-    .case .text-link { margin-top: 20px; }
-    .case-metrics { display: grid; gap: 15px; border-radius: 17px; padding: clamp(16px, 3vw, 34px); background: #fffdfb; }
-    .case-metrics div + div { border-top: 1px solid var(--line); padding-top: 14px; }
-    .case-metrics dt { font-size: 14px; color: var(--muted); }
-    .case-metrics dd { display: flex; align-items: baseline; gap: 8px; margin-top: 4px; font-size: clamp(19px, 2.5vw, 31px); font-weight: 750; line-height: 1.12; letter-spacing: -.035em; }
-    .case-metrics small { color: var(--muted); font-weight: 550; font-size: .62em; text-decoration: none; }
-
-    .plans { padding: clamp(23px, 4.8vw, 58px); border-radius: var(--radius); background: var(--fire); color: #35180e; }
-    .plans .section-intro { color: #401e13; }
-    .plan-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 26px; }
-    .plan { display: flex; flex-direction: column; padding: clamp(18px, 3vw, 33px); border-radius: 18px; background: var(--white); }
-    .plan h3 { color: #803014; font-size: 19px; letter-spacing: 0; }
-    .plan-price { margin-top: 9px; font-size: clamp(22px, 3.15vw, 40px); font-weight: 800; line-height: 1.13; letter-spacing: -.035em; }
-    .plan-price small { font-size: .53em; font-weight: 650; letter-spacing: 0; }
-    .plan dl { margin-top: 15px; font-size: 14px; }
-    .plan dl div + div { margin-top: 10px; }
-    .plan dt { color: var(--muted); }
-    .plan dd { font-weight: 650; }
-    .plans > .actions { justify-content: flex-start; margin-top: 20px; }
-    .plans-note { margin-top: 18px; font-size: 15px; font-weight: 650; }
-
-    .credentials { display: grid; grid-template-columns: 1.05fr 1fr; align-items: center; gap: 24px 8%; }
-    .credentials .text-link { margin-top: 16px; }
-    .credential-preview { padding: clamp(16px, 3vw, 35px); border-radius: var(--radius); background: #f5eee9; }
-    .credential-preview a { display: block; width: fit-content; margin-inline: auto; }
-    .credential-preview img { width: min(100%, 320px); margin-inline: auto; }
-    .credential-preview figcaption { text-align: center; color: var(--muted); font-size: 13px; }
-    .partners { margin-top: clamp(28px, 5vw, 55px); padding-block: clamp(20px, 3vw, 32px); border-block: 1px solid var(--line); }
-    .partners-head { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
-    .partners img { width: min(100%, 960px); margin: 18px auto 0; }
-    .reviews { display: grid; grid-template-columns: minmax(0, .84fr) minmax(0, 1fr); align-items: center; gap: 25px 8%; padding: clamp(23px, 4.8vw, 55px); border-radius: var(--radius); background: var(--fire); color: #35180e; }
-    .reviews p { max-width: 38ch; margin-top: 12px; }
-    .reviews .text-link { margin-top: 18px; }
-    .letters { display: grid; grid-template-columns: repeat(3, 1fr); align-items: start; gap: 12px; }
-    .letters a { display: block; min-width: 0; text-decoration: none; }
-    .letters a:hover .letter-name { text-decoration: underline; }
-    .letters img { width: 100%; aspect-ratio: .72; object-fit: cover; object-position: top; border-radius: 8px; background: white; }
-    .letter-name { display: block; margin-top: 7px; font-size: 13px; font-weight: 750; line-height: 1.2; }
-
-    .faq { display: grid; grid-template-columns: .72fr 1fr; gap: 16px 8%; }
-    .faq-list { border-top: 1px solid var(--line); }
-    .request { margin-bottom: var(--rhythm); padding: clamp(25px, 6vw, 74px); border-radius: var(--radius); background: #fff0e5; }
-    .request h2 { text-wrap: initial; }
-    .request .actions { justify-content: flex-start; margin-top: 24px; }
-    .foot { border-top: 1px solid var(--line); }
-    .foot-inner { min-height: 85px; flex-wrap: wrap; padding-block: 14px; }
-    .foot a:not(.brand), .foot p { font-size: 14px; color: var(--muted); }
-
-    @media (max-width: 1000px) {
-      .trial-head { grid-template-columns: 1fr; gap: 22px; }
-      .numbers { max-width: 600px; }
-      .numbers dt { font-size: clamp(26px, 5vw, 41px); }
-    }
-    @media (max-width: 760px) {
-      .topbar-inner { min-height: 61px; }
-      .nav { display: none; }
-      .case, .profit, .credentials, .reviews, .faq { grid-template-columns: 1fr; }
-      .plan-grid { grid-template-columns: 1fr; }
-      .plan dl { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-      .plan dl div + div { margin-top: 0; }
-      .credential-preview { padding-bottom: 20px; }
-      .credential-preview img { width: min(100%, 285px); }
-      .letters { max-width: 420px; }
-    }
-    @media (max-width: 540px) {
-      html { scroll-padding-top: 73px; }
-      :root { --radius: 19px; }
-      .topbar-inner { gap: 12px; }
-      .brand { gap: 5px; }
-      .brand img:first-child { width: 21px; }
-      .brand img:last-child { width: 118px; }
-      .phone { font-size: 13px; }
-      .hero h1 { font-size: clamp(36px, 10.2vw, 52px); }
-      .hero { padding-block-start: 55px; }
-      .hero p { margin-top: 17px; }
-      .actions { margin-top: 22px; }
-      .hero .actions .button { width: 100%; }
-      .hero .terms { font-size: 13px; }
-      .timeline, .pain-grid { grid-template-columns: 1fr; }
-      .timeline { gap: 16px; margin-top: 27px; }
-      .timeline li { padding-top: 14px; }
-      .day { margin-bottom: 8px; }
-      .numbers { gap: 8px; }
-      .numbers dt { font-size: clamp(21px, 6.3vw, 32px); }
-      .numbers dd { font-size: 12px; }
-      .numbers div + div { padding-left: 9px; }
-      .pain { gap: 12px; }
-      .pain .icon { width: 25px; height: 25px; }
-      .method-grid { grid-template-columns: 1fr; gap: 9px; }
-      .plans > .actions .button, .request .actions .button { width: 100%; }
-      .foot-inner { gap: 9px 15px; }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      .button { transition: none; }
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Приведем клиентов из Яндекс Директ под ключ. 10 дней работы Promo Group за 1 ₽. Рекламный бюджет отдельно.">
+<title>Яндекс Директ за 10 дней · Promo Group</title>
+<link rel="icon" href="https://pr-up.ru/assets/pg-logo-mark.png">
+<link rel="preconnect" href="https://pr-up.ru">
+<link rel="stylesheet" href="./promo-source.css">
+<link rel="stylesheet" href="./preview.css">
+<script src="./preview.js" defer></script>
 </head>
-<body>
-  <svg xmlns="http://www.w3.org/2000/svg" hidden aria-hidden="true">
-    <symbol id="arrow" viewBox="0 0 24 24"><path d="M4 12h15m-6-6 6 6-6 6"/></symbol>
-    <symbol id="play" viewBox="0 0 24 24"><path d="M5 20h14M7 16l3-6 4 3 4-8m-4 0h4v4"/></symbol>
-    <symbol id="search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="5.5"/><path d="m15 15 5 5"/></symbol>
-    <symbol id="report" viewBox="0 0 24 24"><path d="M5 4h14v16H5zM8 15h8m-8-4h8M8 7h3"/></symbol>
-    <symbol id="target" viewBox="0 0 24 24"><circle cx="11" cy="13" r="7"/><path d="M11 13 20 4m-4 0h4v4"/></symbol>
-    <symbol id="funnel" viewBox="0 0 24 24"><path d="M3 5h18l-7 8v5l-4 2v-7z"/></symbol>
-    <symbol id="site" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="14" rx="2"/><path d="M4 9h16m-12 5h7"/></symbol>
-    <symbol id="key" viewBox="0 0 24 24"><circle cx="8" cy="9" r="4"/><path d="m11 12 8 8m-4-4 3-3m-1 5 2-2"/></symbol>
-    <symbol id="team" viewBox="0 0 24 24"><circle cx="10" cy="8" r="3"/><path d="M4 19v-1a6 6 0 0 1 12 0v1m1-14a3 3 0 0 1 0 6m1 2a5 5 0 0 1 3 5v1"/></symbol>
+<body class="pg-unified">
+<svg xmlns="http://www.w3.org/2000/svg" hidden aria-hidden="true">
+    <symbol id="arrow" viewBox="0 0 24 24"><path d="M4 12h15m-6-6 6 6-6 6"></path></symbol>
+    <symbol id="play" viewBox="0 0 24 24"><path d="M5 20h14M7 16l3-6 4 3 4-8m-4 0h4v4"></path></symbol>
+    <symbol id="search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="5.5"></circle><path d="m15 15 5 5"></path></symbol>
+    <symbol id="report" viewBox="0 0 24 24"><path d="M5 4h14v16H5zM8 15h8m-8-4h8M8 7h3"></path></symbol>
+    <symbol id="target" viewBox="0 0 24 24"><circle cx="11" cy="13" r="7"></circle><path d="M11 13 20 4m-4 0h4v4"></path></symbol>
+    <symbol id="funnel" viewBox="0 0 24 24"><path d="M3 5h18l-7 8v5l-4 2v-7z"></path></symbol>
+    <symbol id="site" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="14" rx="2"></rect><path d="M4 9h16m-12 5h7"></path></symbol>
+    <symbol id="key" viewBox="0 0 24 24"><circle cx="8" cy="9" r="4"></circle><path d="m11 12 8 8m-4-4 3-3m-1 5 2-2"></path></symbol>
+    <symbol id="team" viewBox="0 0 24 24"><circle cx="10" cy="8" r="3"></circle><path d="M4 19v-1a6 6 0 0 1 12 0v1m1-14a3 3 0 0 1 0 6m1 2a5 5 0 0 1 3 5v1"></path></symbol>
   </svg>
-  <a class="skip button button-primary" href="#main">К содержанию</a>
-
-  <header class="topbar">
-    <div class="frame topbar-inner">
-      <a class="brand" href="#main" aria-label="Promo Group, начало страницы">
-        <img src="https://pr-up.ru/assets/pg-logo-mark.png" width="25" height="31" alt="">
-        <img src="https://pr-up.ru/assets/pg-logo-word.svg" width="142" height="20" alt="Promo Group">
-      </a>
-      <nav class="nav" aria-label="По странице">
-        <a href="#promo-conditions">Как пройдёт тест</a>
-        <a href="#why-us">Почему мы</a>
-        <a href="#cases">Кейс</a>
-        <a href="#pricing">Тарифы</a>
-      </nav>
-      <a class="phone" href="tel:+78005009545">8 800 500-95-45</a>
-    </div>
-  </header>
-
-  <main id="main">
-    <section class="frame hero" aria-labelledby="hero-title">
-      <h1 id="hero-title">Запустим Яндекс Директ за&nbsp;10&nbsp;дней <span class="hero-price nowrap">за 1 ₽</span></h1>
-      <p class="muted">Настроим рекламу, запустим кампании и покажем первые результаты. Кабинет и все настройки останутся у вас.</p>
-      <div class="actions">
-        <a class="button button-primary" href="#request">Попробовать за 1 ₽ <svg class="icon icon-arrow" aria-hidden="true"><use href="#arrow"/></svg></a>
-        <a class="button button-secondary" href="#promo-conditions">Что входит в тест</a>
-      </div>
-      <p class="terms muted">1 ₽ за работу агентства. Рекламный бюджет оплачивается отдельно.</p>
-    </section>
-
-    <section class="frame trial" id="promo-conditions" aria-labelledby="trial-title">
-      <div class="trial-head">
-        <div>
-          <h2 id="trial-title">Проверьте нас в&nbsp;работе.<br><span class="accent">Потом решайте</span></h2>
-          <p>За 10 дней покажем, как работаем с вашим бюджетом и какие данные уже можно использовать для следующего шага.</p>
-        </div>
-        <dl class="numbers" aria-label="Promo Group в цифрах">
-          <div><dt><span class="accent">19</span> лет</dt><dd>в интернет-маркетинге</dd></div>
-          <div><dt>1 500+</dt><dd>выполненных проектов</dd></div>
-          <div><dt>30+</dt><dd>специалистов в штате</dd></div>
-        </dl>
-      </div>
-      <ol class="timeline" aria-label="Этапы тестового периода">
-        <li>
-          <div class="day"><svg class="icon" aria-hidden="true"><use href="#play"/></svg> Дни 1–3</div>
-          <h3>Запускаем рекламу</h3>
-          <p>Уточняем задачу и бюджет, настраиваем цели и запускаем первые кампании.</p>
-        </li>
-        <li>
-          <div class="day"><svg class="icon" aria-hidden="true"><use href="#search"/></svg> Дни 4–7</div>
-          <h3>Проверяем, что работает</h3>
-          <p>Смотрим, какие запросы и площадки дают обращения, и корректируем кампании.</p>
-        </li>
-        <li>
-          <div class="day"><svg class="icon" aria-hidden="true"><use href="#report"/></svg> Дни 8–10</div>
-          <h3>Разбираем результаты</h3>
-          <p>Показываем расходы и первые данные. Вы решаете, продолжать ли работу.</p>
-        </li>
-      </ol>
-    </section>
-
-    <section class="frame section" aria-labelledby="pain-title">
+<a class="cp-skip" href="#main">Перейти к содержанию</a>
+<header class="pg-header"><div class="pg-header__inner"><a class="pg-brand" href="https://pr-up.ru/" aria-label="Promo Group — главная"><img class="pg-logo-mark" src="https://pr-up.ru/assets/pg-logo-mark.png" alt=""><img class="pg-logo-word" src="https://pr-up.ru/assets/pg-logo-word.svg" alt="Promo Group"></a><nav class="pg-nav" aria-label="Основная навигация"><div class="pg-nav-group pg-about"><a class="pg-nav-group__link" href="https://pr-up.ru/about/company/">О нас</a><button class="pg-nav-group__toggle" type="button" aria-expanded="false" aria-controls="pg-about-list" aria-label="Разделы компании"><svg class="pg-chevron" viewBox="0 0 12 8" fill="none" aria-hidden="true"><path d="m1 1 5 5 5-5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path></svg></button><div id="pg-about-list" class="pg-mega"><a href="https://pr-up.ru/about/company/">О компании</a><a href="https://pr-up.ru/about/recruitment/">Вакансии</a><a href="https://pr-up.ru/about/tendery/">Тендеры</a><a href="https://pr-up.ru/about/bonusy_i_akcii/">Акции и бонусы</a></div></div><div class="pg-nav-group pg-services"><button class="pg-services__trigger" type="button" aria-expanded="false" aria-controls="pg-services-list">Услуги <svg class="pg-chevron" viewBox="0 0 12 8" fill="none" aria-hidden="true"><path d="m1 1 5 5 5-5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path></svg></button><div id="pg-services-list" class="pg-mega"><a href="https://pr-up.ru/services/context/">Контекстная реклама</a><a href="https://pr-up.ru/services/seo/">SEO-продвижение</a><a href="https://pr-up.ru/services/map/">Яндекс Карты</a><a href="https://pr-up.ru/services/e-com/">Маркетплейсы</a><a href="https://pr-up.ru/service/tekhnicheskaya-podderzhka-internet-sajta/">Техническая поддержка</a></div></div><a href="https://pr-up.ru/prices/">Цены</a><a href="https://pr-up.ru/portfolio/">Клиенты</a><a href="https://pr-up.ru/rekomendacii/">Рекомендации</a><a href="https://pr-up.ru/contacts/">Контакты</a></nav><div class="pg-header__actions"><a class="pg-header__phone" href="tel:+78005009545">8 800 500 95 45</a><a class="pg-call pg-call-circle" href="tel:+78005009545" aria-label="Позвонить 8 800 500 95 45"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 3H4a1 1 0 0 0-1 1c0 9.4 7.6 17 17 17 1 0 0 0 1-1v-3l-5-2-2 2a14 14 0 0 1-7-7l2-2-2-5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"></path></svg><span>8 800 500 95 45</span></a><a class="pg-social pg-telegram" href="https://t.me/+79153165258" aria-label="Telegram"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="white" d="m3 11 17-7-3 16-6-5-3 3v-5l9-6-11 5Z"></path></svg></a><a class="pg-social pg-whatsapp" href="https://wa.me/79153165258" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 18 3 22l5-2a9 9 0 1 0-3-2Z" stroke="white" stroke-width="1.5"></path><path d="m8 7 2 3-1 1 4 4 1-1 3 2c-3 4-12-5-9-9Z" fill="white"></path></svg></a></div><button class="pg-menu-toggle" type="button" aria-expanded="false" aria-controls="pg-mobile-menu" aria-label="Открыть меню"><span></span><span></span><span></span></button></div></header>
+<nav class="pg-mobile-menu" id="pg-mobile-menu" aria-label="Мобильная навигация"><div class="pg-mobile-row"><a href="https://pr-up.ru/about/company/">О нас</a><button class="pg-mobile-sub-toggle" type="button" aria-expanded="false" aria-controls="pg-mobile-about" aria-label="Разделы компании"><svg class="pg-chevron" viewBox="0 0 12 8" fill="none" aria-hidden="true"><path d="m1 1 5 5 5-5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path></svg></button></div><div class="pg-mobile-sub" id="pg-mobile-about"><a href="https://pr-up.ru/about/company/">О компании</a><a href="https://pr-up.ru/about/recruitment/">Вакансии</a><a href="https://pr-up.ru/about/tendery/">Тендеры</a><a href="https://pr-up.ru/about/bonusy_i_akcii/">Акции и бонусы</a></div><button class="pg-mobile-services-toggle" type="button" aria-expanded="false" aria-controls="pg-mobile-services">Услуги <svg class="pg-chevron" viewBox="0 0 12 8" fill="none" aria-hidden="true"><path d="m1 1 5 5 5-5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path></svg></button><div class="pg-mobile-services" id="pg-mobile-services"><a href="https://pr-up.ru/services/context/">Контекстная реклама</a><a href="https://pr-up.ru/services/seo/">SEO-продвижение</a><a href="https://pr-up.ru/services/map/">Яндекс Карты</a><a href="https://pr-up.ru/services/e-com/">Маркетплейсы</a><a href="https://pr-up.ru/service/tekhnicheskaya-podderzhka-internet-sajta/">Техническая поддержка</a></div><a href="https://pr-up.ru/prices/">Цены</a><a href="https://pr-up.ru/portfolio/">Клиенты</a><a href="https://pr-up.ru/rekomendacii/">Рекомендации</a><a href="https://pr-up.ru/contacts/">Контакты</a></nav>
+<nav class="pg-breadcrumb" aria-label="Хлебные крошки"><a href="https://pr-up.ru/">Главная</a><span aria-hidden="true">/</span><span>Контекстная реклама</span></nav>
+<main id="main" class="pm-home pm-page--context pg-preview">
+<section class="pm-section pm-section--context-section-1" aria-label="Яндекс Директ за 1 ₽"><div class="pm-surface" aria-hidden="true"><div class="pm-carrier"></div></div>
+<div class="pm-item pm-item-1"><div class="pm-cell"></div></div>
+<div class="pm-item pm-item-6"><h1 class="pm-cell">Приведем клиентов из <span style="color: rgb(37, 37, 37);">Яндекс Директ под ключ</span><span style="color: rgb(144, 143, 143);"> за 10 дней</span><span style="color: rgb(255, 131, 49);"> за 1 ₽</span></h1></div>
+<div class="pm-item pm-item-7"><a class="pm-cell" href="#promo-conditions">ЧТО ВХОДИТ В ТЕСТ</a></div>
+<div class="pm-item pm-item-8"><a class="pm-cell" href="#request">ПОПРОБОВАТЬ 10 ДНЕЙ ЗА 1 ₽</a></div>
+<div class="pm-item pm-item-9"><div class="pm-cell"><img src="https://pr-up.ru/assets/marketing/home-ed607bf41120.png" alt="" decoding="async"></div></div>
+<div class="pm-item pm-item-10"><div class="pm-cell"><svg viewBox="0 0 534.00 64.16"><defs></defs><path fill="#f1d8cc" stroke="#F1CDBD" fill-opacity="0.22" stroke-width="1" stroke-opacity="1" id="context-section-1-1781621227974000002-tSvg10a81a1ba41" d="M513.8147 0.9979C349.2706 0.9979 184.7267 0.9979 20.1826 0.9979C9.6208 0.9979 1.0589 9.5599 1.0589 20.1217C1.0589 28.09 1.0589 36.0582 1.0589 44.0264C1.0589 54.5882 9.6208 63.1502 20.1826 63.1502C184.7267 63.1502 349.2706 63.1502 513.8147 63.1502C524.377 63.1502 532.9384 54.5882 532.9384 44.0264C532.9384 36.0582 532.9384 28.09 532.9384 20.1217C532.9384 9.5599 524.377 0.9979 513.8147 0.9979Z"></path></svg> </div></div>
+<div class="pm-item pm-item-11"><div class="pm-cell"><svg viewBox="0 0 41.00 41.00"><defs></defs><path fill="#ffffff" stroke="none" fill-opacity="1" stroke-width="1" stroke-opacity="1" id="context-section-1-1781620701099000010-tSvgd3b8ca0e90" d="M20.5 41C31.8218 41 41 31.8218 41 20.5C41 9.1782 31.8218 0 20.5 0C9.1782 0 0 9.1782 0 20.5C0 31.8218 9.1782 41 20.5 41Z"></path></svg> </div></div>
+<div class="pm-item pm-item-12"><div class="pm-cell">₽</div></div>
+<div class="pm-item pm-item-13"><div class="pm-cell">Полноценная настройка и запуск</div></div>
+<div class="pm-item pm-item-14"><div class="pm-cell">Кабинеты и все настройки остаются у вас.</div></div>
+</section>
+<section class="pm-section pm-section--context-section-40" aria-label="Яндекс Директ за 1 ₽"><div class="pm-surface" aria-hidden="true"><div class="pm-carrier"></div></div>
+<div class="pm-item pm-item-1"><div class="pm-cell"><svg viewBox="0 0 315.00 82.00"><defs></defs><path fill="#f1d8cc" stroke="#F1CDBD" fill-opacity="0.22" stroke-width="1" stroke-opacity="1" id="context-section-40-1781622107635000001-tSvg9f8b817fba" d="M302.746 0.9999C205.9152 0.9999 109.0847 0.9999 12.2538 0.9999C6.0384 0.9999 0.9999 12.0205 0.9999 25.6152C0.9999 35.8717 0.9999 46.128 0.9999 56.3843C0.9999 69.979 6.0384 80.9998 12.2538 80.9998C109.0847 80.9998 205.9152 80.9998 302.746 80.9998C308.9617 80.9998 313.9999 69.979 313.9999 56.3843C313.9999 46.128 313.9999 35.8717 313.9999 25.6152C313.9999 12.0205 308.9617 0.9999 302.746 0.9999Z"></path></svg> </div></div>
+<div class="pm-item pm-item-4"><div class="pm-cell"></div></div>
+<div class="pm-item pm-item-5"><h1 class="pm-cell">Приведем клиентов из <span style="color: rgb(37, 37, 37);">Яндекс Директ под ключ</span><span style="color: rgb(144, 143, 143);"> за 10 дней</span><span style="color: rgb(255, 131, 49);"> за 1 ₽</span></h1></div>
+<div class="pm-item pm-item-6"><a class="pm-cell" href="#promo-conditions">ЧТО ВХОДИТ В ТЕСТ</a></div>
+<div class="pm-item pm-item-7"><a class="pm-cell" href="#request">ПОПРОБОВАТЬ 10 ДНЕЙ ЗА 1 ₽</a></div>
+<div class="pm-item pm-item-9"><div class="pm-cell"><img src="https://pr-up.ru/assets/marketing/home-ed607bf41120.png" alt="" decoding="async"></div></div>
+<div class="pm-item pm-item-10"><div class="pm-cell"><svg viewBox="0 0 41.00 41.00"><defs></defs><path fill="#ffffff" stroke="none" fill-opacity="1" stroke-width="1" stroke-opacity="1" id="context-section-40-1781622107636000002-tSvgd3b8ca0e90" d="M20.5 41C31.8218 41 41 31.8218 41 20.5C41 9.1782 31.8218 0 20.5 0C9.1782 0 0 9.1782 0 20.5C0 31.8218 9.1782 41 20.5 41Z"></path></svg> </div></div>
+<div class="pm-item pm-item-11"><div class="pm-cell">₽</div></div>
+<div class="pm-item pm-item-12"><div class="pm-cell">Полноценная настройка и запуск</div></div>
+<div class="pm-item pm-item-13"><div class="pm-cell">Кабинеты и все настройки остаются у вас.</div></div>
+</section>
+<section class="pg-preview-thesis" aria-labelledby="thesis-title"><h2 id="thesis-title">Продолжайте терять клиентов <span>или работайте с нами</span></h2></section>
+<aside class="pg-promo-summary pg-promo-proof" id="promo-conditions" aria-labelledby="promo-conditions-title">
+  <div class="pg-proof__intro">
+    <h2 id="promo-conditions-title">Проверьте нас в работе.<br> <span>Потом решайте</span></h2>
+    <p class="pg-proof__lead">10 дней работы агентства за 1 ₽. Рекламный бюджет оплачивается отдельно.</p>
+  </div>
+  <ul class="pg-proof__benefits">
+    <li>
+      <span class="pg-proof__icon pg-proof__icon--rocket" aria-hidden="true"><img src="https://pr-up.ru/services/context-promo/assets/promo-proof-reference-20261109.png" alt="" width="1280" height="720" loading="lazy"></span>
+      <h3><span class="pg-preview-day">Дни 1–3</span>Быстрый старт</h3>
+      <p>Уточняем задачу и бюджет, настраиваем цели и запускаем кампании.</p>
+    </li>
+    <li>
+      <span class="pg-proof__icon pg-proof__icon--chart" aria-hidden="true"><img src="https://pr-up.ru/services/context-promo/assets/promo-proof-reference-20261109.png" alt="" width="1280" height="720" loading="lazy"></span>
+      <h3><span class="pg-preview-day">Дни 4–7</span>Первые данные</h3>
+      <p>Проверяем, какие запросы и площадки дают обращения, и корректируем кампании.</p>
+    </li>
+    <li>
+      <span class="pg-proof__icon pg-proof__icon--shield" aria-hidden="true"><img src="https://pr-up.ru/services/context-promo/assets/promo-proof-reference-20261109.png" alt="" width="1280" height="720" loading="lazy"></span>
+      <h3><span class="pg-preview-day">Дни 8–10</span>Итоги теста</h3>
+      <p>Показываем расходы и первые результаты. Вы решаете, продолжать ли работу.</p>
+    </li>
+  </ul>
+  <section class="pg-proof__company" aria-label="Promo Group в цифрах">
+    <h3 class="pg-proof__experience" aria-label="19 лет в интернет-маркетинге"><span class="pg-proof__years">19</span><span class="pg-proof__experience-copy"><strong>лет</strong><span>в интернет-маркетинге</span></span></h3>
+    <dl class="pg-proof__metrics">
+      <div><dt>1500+</dt><dd>проектов<br> выполнено</dd></div>
+      <div><dt>250<small>тыс</small>+</dt><dd>заявок привели<br> нашим<br> клиентам</dd></div>
+      <div><dt>10<small>тыс</small>+</dt><dd>настроенных<br> рекламных<br> кампаний</dd></div>
+      <div><dt>85%</dt><dd>клиентов с нами<br> более 5 лет</dd></div>
+    </dl>
+  </section>
+</aside>
+<section class="pg-preview-block pg-preview-pain" aria-labelledby="pain-title">
       <h2 id="pain-title">Вам знакомы эти проблемы?</h2>
       <div class="pain-grid">
         <article class="pain">
           <div><h3>Реклама идёт, заявок мало</h3><p>Разберём запросы, площадки и объявления. Покажем, где бюджет расходуется без обращений.</p></div>
-          <svg class="icon" aria-hidden="true"><use href="#target"/></svg>
+          <svg class="icon" aria-hidden="true"><use href="#target"></use></svg>
         </article>
         <article class="pain">
           <div><h3>Заявки есть, продажи не видны</h3><p>Обсудим, как связать Директ со звонками и CRM, чтобы видеть, откуда приходят покупатели.</p></div>
-          <svg class="icon" aria-hidden="true"><use href="#funnel"/></svg>
+          <svg class="icon" aria-hidden="true"><use href="#funnel"></use></svg>
         </article>
         <article class="pain">
           <div><h3>Сайт теряет клиентов</h3><p>Найдём, где посетители уходят. Если нужна отдельная посадочная, предложим формат под кампанию.</p></div>
-          <svg class="icon" aria-hidden="true"><use href="#site"/></svg>
+          <svg class="icon" aria-hidden="true"><use href="#site"></use></svg>
         </article>
         <article class="pain">
           <div><h3>Кабинет остался у подрядчика</h3><p>Запустим рекламу в вашем кабинете. С первого дня вы видите настройки, расходы и обращения.</p></div>
-          <svg class="icon" aria-hidden="true"><use href="#key"/></svg>
+          <svg class="icon" aria-hidden="true"><use href="#key"></use></svg>
         </article>
       </div>
     </section>
-
-    <section class="frame section" id="why-us" aria-labelledby="method-title">
+<section class="pg-preview-block pg-preview-method" id="why-us" aria-labelledby="method-title">
       <h2 id="method-title">Почему нас выбирают</h2>
       <div class="method-grid">
         <details class="method">
           <summary>
-            <svg class="icon" aria-hidden="true"><use href="#team"/></svg>
+            <svg class="icon" aria-hidden="true"><use href="#team"></use></svg>
             <span><strong class="method-title">Команда закреплена за проектом</strong><span class="method-lead">Рекламу, аналитику и дизайн ведут специалисты с общей задачей.</span></span>
-            <svg class="icon toggle" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path class="vertical" d="M12 5v14"/></svg>
+            <svg class="icon toggle" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"></path><path class="vertical" d="M12 5v14"></path></svg>
           </summary>
           <p>Перед запуском разбираемся в продукте и согласуем, какие обращения считать целевыми. По этим критериям команда оценивает кампании.</p>
         </details>
         <details class="method">
           <summary>
-            <svg class="icon" aria-hidden="true"><use href="#target"/></svg>
+            <svg class="icon" aria-hidden="true"><use href="#target"></use></svg>
             <span><strong class="method-title">Учитываем специфику вашей ниши</strong><span class="method-lead">Есть опыт в e-commerce, услугах, производстве и недвижимости.</span></span>
-            <svg class="icon toggle" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path class="vertical" d="M12 5v14"/></svg>
+            <svg class="icon toggle" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"></path><path class="vertical" d="M12 5v14"></path></svg>
           </summary>
           <p>Изучаем спрос, конкурентов и цикл сделки. Для магазина важна покупка, а для производителя с длинным циклом сделки — квалифицированное обращение.</p>
         </details>
         <details class="method">
           <summary>
-            <svg class="icon" aria-hidden="true"><use href="#report"/></svg>
+            <svg class="icon" aria-hidden="true"><use href="#report"></use></svg>
             <span><strong class="method-title">Показываем, откуда идут продажи</strong><span class="method-lead">Связываем рекламные расходы с данными о звонках, заявках и сделках.</span></span>
-            <svg class="icon toggle" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path class="vertical" d="M12 5v14"/></svg>
+            <svg class="icon toggle" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"></path><path class="vertical" d="M12 5v14"></path></svg>
           </summary>
           <p>Если нужно, отдельно согласуем настройку коллтрекинга и сквозной аналитики. Данные из CRM помогают понять, какие кампании приносят продажи.</p>
         </details>
         <details class="method">
           <summary>
-            <svg class="icon" aria-hidden="true"><use href="#site"/></svg>
+            <svg class="icon" aria-hidden="true"><use href="#site"></use></svg>
             <span><strong class="method-title">Смотрим на рекламу вместе с сайтом</strong><span class="method-lead">Проверяем, где теряются клиенты после клика.</span></span>
-            <svg class="icon toggle" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path class="vertical" d="M12 5v14"/></svg>
+            <svg class="icon toggle" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"></path><path class="vertical" d="M12 5v14"></path></svg>
           </summary>
           <p>Сверяем обещание в объявлении с содержанием страницы. При необходимости предложим новую посадочную или квиз и оценим их по заявкам.</p>
         </details>
       </div>
       <details class="disclosure ai">
-        <summary>Как используем собственные AI-инструменты <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path class="vertical" d="M12 5v14"/></svg></summary>
+        <summary>Как используем собственные AI-инструменты <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"></path><path class="vertical" d="M12 5v14"></path></svg></summary>
         <p>Они помогают быстрее группировать запросы и замечать аномалии в расходах и обращениях. Специалист проверяет выводы и решает, что менять в кампании.</p>
       </details>
     </section>
-
-    <section class="frame section profit" aria-labelledby="profit-title">
+<section class="pg-preview-block pg-preview-profit" aria-labelledby="profit-title">
       <div>
-        <h2 id="profit-title">Что реклама приносит бизнесу</h2>
+        <h2 id="profit-title">Для нас важна ваша прибыль</h2>
         <p class="muted">Берём за основу ваш средний чек, маржу и конверсию в продажу. По ним определяем, сколько можно платить за привлечение клиента.</p>
       </div>
       <dl class="metrics">
@@ -394,128 +160,309 @@
         <div><dt>ROMI</dt><dd>Окупаемость маркетинга</dd></div>
       </dl>
     </section>
-
-    <section class="frame section" id="cases" aria-labelledby="case-title">
-      <h2 id="case-title">Кейс из практики</h2>
-      <article class="case">
-        <div>
-          <p class="case-name">«Мелодия сна», Якутск</p>
-          <h3>В <span class="accent">7 раз</span> больше продаж</h3>
-          <p class="muted">Настроили передачу офлайн-конверсий в Директ и собрали посадочные страницы с квизами.</p>
-          <a class="text-link" href="https://pr-up.ru/upload/iblock/7f1/1v102heesnj3zo0zkass4cawfio2hlyq/11.png">Смотреть исходный кейс <svg class="icon icon-arrow" aria-hidden="true"><use href="#arrow"/></svg></a>
-        </div>
-        <dl class="case-metrics" aria-label="Сравнение до и после работ">
-          <div><dt>Стоимость заявки</dt><dd><small>5 600 ₽</small><svg class="icon icon-arrow" aria-label="до" role="img"><use href="#arrow"/></svg><span>780 ₽</span></dd></div>
-          <div><dt>Количество заявок</dt><dd><small>7</small><svg class="icon icon-arrow" aria-label="до" role="img"><use href="#arrow"/></svg><span>115</span></dd></div>
-          <div><dt>Рекламный бюджет в месяц</dt><dd><small>40 000 ₽</small><svg class="icon icon-arrow" aria-label="до" role="img"><use href="#arrow"/></svg><span>90 000 ₽</span></dd></div>
-        </dl>
-      </article>
-    </section>
-
-    <section class="frame section plans" id="pricing" aria-labelledby="price-title">
-      <h2 id="price-title">Тарифы после теста</h2>
-      <p class="section-intro">Выбираем тариф по бюджету и показателям, которые нужно отслеживать.</p>
-      <div class="plan-grid">
-        <article class="plan">
-          <h3>Start</h3><p class="plan-price">45 000 ₽</p>
-          <dl><div><dt>Бюджет на рекламу</dt><dd>До 600 000 ₽</dd></div><div><dt>KPI</dt><dd>Лиды</dd></div></dl>
-        </article>
-        <article class="plan">
-          <h3>Profi</h3><p class="plan-price">8% <small>от бюджета</small></p>
-          <dl><div><dt>Бюджет на рекламу</dt><dd>600 000–1 000 000 ₽</dd></div><div><dt>KPI</dt><dd>Лиды и заявки</dd></div></dl>
-        </article>
-        <article class="plan">
-          <h3>Maximum</h3><p class="plan-price">7% <small>от бюджета</small></p>
-          <dl><div><dt>Бюджет на рекламу</dt><dd>От 1 000 000 ₽</dd></div><div><dt>KPI</dt><dd>Заявки, продажи и ROMI</dd></div><div><dt>Максимум за ведение</dt><dd>100 000 ₽</dd></div></dl>
-        </article>
-      </div>
-      <p class="plans-note">На всех тарифах — любые регионы и финансовые гарантии в договоре.</p>
-      <div class="actions"><a class="button button-white" href="#request">Обсудить бюджет <svg class="icon icon-arrow" aria-hidden="true"><use href="#arrow"/></svg></a></div>
-    </section>
-
-    <section class="frame section" aria-labelledby="expert-title">
-      <div class="credentials">
-        <div>
-          <h2 id="expert-title">Сертификаты команды и агентства</h2>
-          <p class="section-intro">Яндекс Директ, Метрика и медийная реклама. Квалификацию специалистов можно проверить по опубликованным сертификатам.</p>
-          <a class="text-link" href="https://pr-up.ru/services/context-promo/">Смотреть сертификаты на pr-up.ru <svg class="icon icon-arrow" aria-hidden="true"><use href="#arrow"/></svg></a>
-        </div>
-        <figure class="credential-preview">
-          <a href="https://pr-up.ru/assets/marketing/home-0e4e3fcd6662.png" aria-label="Открыть сертификат партнёра за 2025 год">
-            <img src="https://pr-up.ru/assets/marketing/home-0e4e3fcd6662.png" width="387" height="310" alt="Сертификат партнёра Яндекса для Промо Групп" loading="lazy">
-          </a>
-          <figcaption>Сертификат партнёра Яндекса за 2025 год</figcaption>
-        </figure>
-      </div>
-      <div class="partners">
-        <div class="partners-head">
-          <h3>Нам доверяют</h3>
-          <a class="text-link" href="https://pr-up.ru/portfolio/">Все клиенты и кейсы <svg class="icon icon-arrow" aria-hidden="true"><use href="#arrow"/></svg></a>
-        </div>
-        <img src="https://pr-up.ru/assets/marketing/home-2385858cdd60.png" width="1069" height="150" alt="Хорошо!, Океания, Моремолл, Галерея Новосибирск, Галерея Краснодар" loading="lazy">
-      </div>
-    </section>
-
-    <section class="frame section reviews" id="reviews" aria-labelledby="reviews-title">
-      <div>
-        <h2 id="reviews-title">Отзывы клиентов</h2>
-        <p>Рекомендательные письма компаний, с которыми мы работали.</p>
-        <a class="text-link" href="https://pr-up.ru/rekomendacii/">Все рекомендации <svg class="icon icon-arrow" aria-hidden="true"><use href="#arrow"/></svg></a>
-      </div>
-      <div class="letters">
-        <a href="https://pr-up.ru/assets/company-pages/source/f19744d53c6c76f0f95e.jpg">
-          <img src="https://pr-up.ru/assets/company-pages/source/f19744d53c6c76f0f95e.jpg" alt="" width="180" height="250" loading="lazy"><span class="letter-name">Альтамед</span>
-        </a>
-        <a href="https://pr-up.ru/assets/company-pages/source/f72e6e14c693e8a35d11.jpg">
-          <img src="https://pr-up.ru/assets/company-pages/source/f72e6e14c693e8a35d11.jpg" alt="" width="180" height="250" loading="lazy"><span class="letter-name">Goldenmed</span>
-        </a>
-        <a href="https://pr-up.ru/assets/company-pages/source/a93041ca337b32322676.jpg">
-          <img src="https://pr-up.ru/assets/company-pages/source/a93041ca337b32322676.jpg" alt="" width="180" height="250" loading="lazy"><span class="letter-name">Врач на дом</span>
-        </a>
-      </div>
-    </section>
-
-    <section class="frame section faq" aria-labelledby="faq-title">
-      <h2 id="faq-title">Вопросы перед стартом</h2>
+<div class="pg-preview-anchor" id="cases"></div>
+<section class="pm-section pm-section--context-section-18" aria-label="Кейсы"><style>.pm-home .pm-section--context-section-18 .pm-gallery[data-managed-cases] .pm-gallery-image{background-image:url("https://pr-up.ru/upload/iblock/7f1/1v102heesnj3zo0zkass4cawfio2hlyq/11.png")}</style><div class="pm-surface" aria-hidden="true"><div class="pm-carrier"></div></div>
+<div class="pm-item pm-item-1 pm-item--gallery"><div class="pm-gallery" data-gallery data-slide-duration="300" data-managed-cases data-case-links='["","","","","","","","","","","",""]' data-case-titles='["Контекстная реклама — кейс 1 (компьютер)","Контекстная реклама — кейс 2 (компьютер)","Контекстная реклама — кейс 3 (компьютер)","Контекстная реклама — кейс 4 (компьютер)","Контекстная реклама — кейс 5 (компьютер)","Контекстная реклама — кейс 6 (компьютер)","Контекстная реклама — кейс 7 (компьютер)","Контекстная реклама — кейс 8 (компьютер)","Контекстная реклама — кейс 9 (компьютер)","Контекстная реклама — кейс 10 (компьютер)","Контекстная реклама — кейс 11 (компьютер)","Контекстная реклама — кейс 12 (компьютер)"]'><div class="pm-gallery-stage"><div class="pm-gallery-image" role="img" aria-label="Кейс «Мелодия сна»" data-image-url="https://pr-up.ru/upload/iblock/7f1/1v102heesnj3zo0zkass4cawfio2hlyq/11.png"></div></div><span hidden data-slides>["https://pr-up.ru/upload/iblock/7f1/1v102heesnj3zo0zkass4cawfio2hlyq/11.png", "https://pr-up.ru/upload/iblock/d95/fx05nbi9liyru6mu1zhojo004rsjou3x/10.png", "https://pr-up.ru/upload/iblock/802/oe0r3txyt3wq0l4edhfu8tcqk3gm06hv/12.png", "https://pr-up.ru/upload/iblock/649/vjfre8cbymvvsp0t5fv1e54ncgkzm8n4/13.png", "https://pr-up.ru/upload/iblock/f67/vgexerr63v8lyno5j6zn9dagpexiqf5z/15.png", "https://pr-up.ru/upload/iblock/856/rgnvbwbqu2m3rha0eu0bceh8qqnnx6mp/16.png", "https://pr-up.ru/upload/iblock/bac/0guaxk98y297yjmc5lyktcf242ege0x7/17.png", "https://pr-up.ru/upload/iblock/480/ffrcig7i8x96djk574ljrr5rr05rndpw/18.png", "https://pr-up.ru/upload/iblock/ebb/w89s0wy1wumkzxr5aiugbenjiil6g4ic/19.png", "https://pr-up.ru/upload/iblock/439/yjayqprssybj7mhdayst7eibjlp6dadf/20.png", "https://pr-up.ru/upload/iblock/a48/tpihs39sc3jq342uamloraqlqms96l1c/21.png", "https://pr-up.ru/upload/iblock/10d/n0dgk6x4wprrmk5f4y3u262rr9rubaw2/14.png"]</span><button class="pm-gallery-prev" type="button" data-step="-1" aria-label="Предыдущий слайд"><svg viewBox="0 0 94 94" fill="none"><path d="M63 47.917H30" stroke="black" vector-effect="non-scaling-stroke" style="stroke-width: 3px; stroke: rgb(255, 131, 49);"></path><path d="M46.917 64L63 47.917L46.917 31.834" stroke="black" vector-effect="non-scaling-stroke" style="stroke-width: 3px; stroke: rgb(255, 131, 49);"></path></svg></button><button class="pm-gallery-next" type="button" data-step="1" aria-label="Следующий слайд"><svg viewBox="0 0 94 94" fill="none"><path d="M63 47.917H30" stroke="black" vector-effect="non-scaling-stroke" style="stroke-width: 3px; stroke: rgb(255, 131, 49);"></path><path d="M46.917 64L63 47.917L46.917 31.834" stroke="black" vector-effect="non-scaling-stroke" style="stroke-width: 3px; stroke: rgb(255, 131, 49);"></path></svg></button></div></div>
+<div class="pm-item pm-item-2"><div class="pm-cell">КЕЙСЫ</div></div>
+</section>
+<section class="pm-section pm-section--context-section-48" aria-label="Кейсы"><style>.pm-home .pm-section--context-section-48 .pm-gallery[data-managed-cases] .pm-gallery-image{background-image:url("https://pr-up.ru/upload/iblock/9c6/ktrmr3lvyyaxgmeq99lzdrw9tm8ua4f7/context-2.png")}</style><div class="pm-surface" aria-hidden="true"><div class="pm-carrier"></div></div>
+<div class="pm-item pm-item-1 pm-item--gallery"><div class="pm-gallery" data-gallery data-slide-duration="300" data-managed-cases data-case-links='["","","","","","","","","","",""]' data-case-titles='["Контекстная реклама — кейс 1 (телефон)","Контекстная реклама — кейс 2 (телефон)","Контекстная реклама — кейс 3 (телефон)","Контекстная реклама — кейс 4 (телефон)","Контекстная реклама — кейс 5 (телефон)","Контекстная реклама — кейс 11 (телефон)","Контекстная реклама — кейс 6 (телефон)","Контекстная реклама — кейс 7 (телефон)","Контекстная реклама — кейс 8 (телефон)","Контекстная реклама — кейс 9 (телефон)","Контекстная реклама — кейс 10 (телефон)"]'><div class="pm-gallery-stage"><div class="pm-gallery-image" role="img" aria-label="Кейс «Мелодия сна»" data-image-url="https://pr-up.ru/upload/iblock/9c6/ktrmr3lvyyaxgmeq99lzdrw9tm8ua4f7/context-2.png"></div></div><span hidden data-slides>["https://pr-up.ru/upload/iblock/9c6/ktrmr3lvyyaxgmeq99lzdrw9tm8ua4f7/context-2.png", "https://pr-up.ru/upload/iblock/bc1/zehwulj6fd0g1okqqrq0b4ugn94lla1s/context-1.png", "https://pr-up.ru/upload/iblock/95c/rm3wparadd92yutt8z64pwk0yz4n8kcq/context-3.png", "https://pr-up.ru/upload/iblock/af2/04c7d5f21bf437ojgdbt6yb6jflg2ykh/context-4.png", "https://pr-up.ru/upload/iblock/657/uhx5palgkbe7682ny81k1xfkteup2cvm/context-5.png", "https://pr-up.ru/upload/iblock/309/gc0ykg6h5q4ijl4vvfa1jac8ul3elnsi/context-11.png", "https://pr-up.ru/upload/iblock/d07/vdk4dw0wigbqquxx3v1cjaf6ebwqlcej/context-6.png", "https://pr-up.ru/upload/iblock/f30/ta044hrv0l9f33p2d1f76km16vr075uw/context-7.png", "https://pr-up.ru/upload/iblock/e67/6w1y71ri76sf51fmjq1ii2npwxbsqcue/context-8.png", "https://pr-up.ru/upload/iblock/bdc/ggvt3np81he9vfh2v4e4lfqplwx6fj88/context-9.png", "https://pr-up.ru/upload/iblock/6fd/iyh5vclxtyh8wj943kayss37uzbbduu3/context-10.png"]</span><button class="pm-gallery-prev" type="button" data-step="-1" aria-label="Предыдущий слайд"><svg viewBox="0 0 94 94" fill="none"><path d="M63 47.917H30" stroke="black" vector-effect="non-scaling-stroke" style="stroke-width: 3px; stroke: rgb(255, 131, 49);"></path><path d="M46.917 64L63 47.917L46.917 31.834" stroke="black" vector-effect="non-scaling-stroke" style="stroke-width: 3px; stroke: rgb(255, 131, 49);"></path></svg></button><button class="pm-gallery-next" type="button" data-step="1" aria-label="Следующий слайд"><svg viewBox="0 0 94 94" fill="none"><path d="M63 47.917H30" stroke="black" vector-effect="non-scaling-stroke" style="stroke-width: 3px; stroke: rgb(255, 131, 49);"></path><path d="M46.917 64L63 47.917L46.917 31.834" stroke="black" vector-effect="non-scaling-stroke" style="stroke-width: 3px; stroke: rgb(255, 131, 49);"></path></svg></button></div></div>
+<div class="pm-item pm-item-2"><div class="pm-cell">КЕЙСЫ</div></div>
+</section>
+<div class="pg-preview-anchor" id="pricing"></div>
+<section class="pm-section pm-section--context-section-25" aria-label="Тарифы после теста"><div class="pm-surface" aria-hidden="true"><div class="pm-carrier"></div></div>
+<div class="pm-item pm-item-1"><div class="pm-cell"></div></div>
+<div class="pm-item pm-item-2"><div class="pm-cell"><svg viewBox="0 0 655.2021484375 189.7763671875" fill="none"> <path d="M107.24641744227812 12.986876525799731C116.1835147367417 21.505154408019063 120.65218837484501 32.81635331405296 120.65218837484501 46.92032325485561C120.65218837484501 61.02429319565827 116.1835147367417 72.33546710351786 107.24641744227812 80.85384497843441C98.44880996041587 89.37197287160794 86.57917683866486 93.6311618090662 71.6372680952821 93.6311618090662H29.32510829113113V148.72063844384897H0V0H71.6372680952821C86.57917683866486 0 98.44880996041587 4.328958841933243 107.24641744227812 12.986876525799731ZM66.40065054264237 24.298025435485027H29.32510829113113V69.33318636992978H66.40065054264237C74.22057942758012 69.33318636992978 80.36488068910066 67.37807915782382 84.83355432720396 63.46811471535494C89.30222796530725 59.55815027288607 91.5365647843589 54.042053131557616 91.5365647843589 46.92032325485561C91.5365647843589 39.79859337815361 89.30222796530725 34.28249623682516 84.83355432720396 30.37253179435628C80.50462048344501 26.322827557543043 74.36031922192448 24.298025435485027 66.40065054264237 24.298025435485027Z" fill="#D9D9D9" fill-opacity="0.27"></path> <path d="M208.55251872533444 43.35933332563311L203.73487057398478 67.23858934522248C198.5679979276457 65.84194134700795 194.02957938324172 65.14374233877217 190.11961494077283 65.14374233877217C182.8581452697265 65.14374233877217 177.132563427753 67.86679346541457 172.94336937833842 73.31289571869934C168.75392534718085 78.7589979719841 166.65932832247356 86.29994723171917 166.65932832247356 95.93524353441852V148.72063844384897H139.4288170560497V41.68370570221588H164.77421599841128V57.39355836013509C170.3600580460404 45.942894639674144 179.297155340504 40.217312797700664 191.58575786354504 40.217312797700664C196.19392131424968 40.217312797700664 201.8495082681795 41.26473630092582 208.55251872533444 43.35933332563311Z" fill="#D9D9D9" fill-opacity="0.27"></path> <path d="M249.70926291327856 41.68370570221588V148.72063844384897H222.47875164685473V41.68370570221588H249.70926291327856ZM249.70926291327856 0V25.554883643006608H222.47875164685473V0H249.70926291327856Z" fill="#D9D9D9" fill-opacity="0.27"></path> <path d="M323.4713758241726 61.164032990002625C314.951998022284 61.164032990002625 308.17999260405736 64.37579842423574 303.1528597520627 70.79932929270198C298.26571667615536 77.08337034856686 295.82089522948655 85.18277882219334 295.82089522948655 95.09730473183839C295.82089522948655 105.01208062322647 298.26571667615536 113.11148909685294 303.1528597520627 119.39553015271784C308.04000282797 125.67932122683972 314.7420133581529 128.82134175477216 323.2613911600415 128.82134175477216C328.2885240120362 128.82134175477216 332.9656824238125 127.56468353264498 337.29536621280045 125.05111710664762C341.7650397778758 122.53730069890727 346.79217262987055 118.27836174319202 352.37676476878454 112.27355029427282L370.3904491703131 127.35519883199996C363.1284795357807 136.43203592080792 355.79901483063475 142.85556678927415 348.397055420015 146.62604141914167C341.13508578548266 150.25677625466486 332.6182078010242 152.07214367242642 322.84142183177937 152.07214367242642C306.5051149258692 152.07214367242642 293.3085787122043 146.90527102608738 283.25431300821487 136.57152573340926C273.2000473042255 126.23803042247413 268.17291445223077 112.41329008861717 268.17291445223077 95.09730473183839C268.17291445223077 77.78156935680263 273.2675423748391 63.95682902294568 283.46179785491586 53.62333371201056C293.65605333499263 43.28958841933243 306.99257932474484 38.122715772993374 323.4713758241726 38.122715772993374C332.5482129129805 38.122715772993374 340.5776264985633 39.728598490109924 347.55961658092093 42.940363924343046C354.68159643936593 46.01263954597482 361.5935916336799 51.17951219231389 368.2956021638628 58.44098186336024L351.32934126555944 75.1982580245046C345.74474912664533 69.89164558382117 340.8551062333079 66.260910748298 336.6679120378374 64.30605351793507C332.47821802493684 62.21120651148476 328.0785393479052 61.164032990002625 323.4713758241726 61.164032990002625Z" fill="#D9D9D9" fill-opacity="0.27"></path> <path d="M411.7174309252492 41.68370570221588V148.72063844384897H384.48691965882534V41.68370570221588H411.7174309252492ZM411.7174309252492 0V25.554883643006608H384.48691965882534V0H411.7174309252492Z" fill="#D9D9D9" fill-opacity="0.27"></path> <path d="M531.5611783431897 75.40774272514965V148.72063844384897H504.3306670767658V83.57689610507678C504.3306670767658 76.45491624663177 502.5857945105339 71.008813993347 499.09354956064004 67.23858934522248C495.7437942042636 63.46811471535494 490.8566511283563 61.58300239129269 484.432120332918 61.58300239129269C478.1475793135671 61.58300239129269 472.980456685485 63.67759941599998 468.9307524486718 67.86679346541457C464.88104821185857 72.05623749657215 462.8561960934519 77.50233974985693 462.8561960934519 84.20510022526886V148.72063844384897H435.6256848270281V41.68370570221588H460.9713337511327V53.83256843091258C468.23330338566507 43.35933332563311 478.9850181526612 38.122715772993374 493.2289778695512 38.122715772993374C505.23810080390354 38.122715772993374 514.5949174448863 41.54396590787152 521.2969279750693 48.38646617762782C528.1414280987696 55.08947663478276 531.5611783431897 64.09656881729003 531.5611783431897 75.40774272514965Z" fill="#D9D9D9" fill-opacity="0.27"></path> <path d="M630.0664841775265 41.68370570221588H655.2021484375V143.4840208912092C655.2021484375 158.14670002764632 650.3850002496364 169.52761884180657 640.7482040564789 177.62677733369003C631.1139076807516 185.7261858073165 618.4748307540061 189.77589004412974 602.8359729111027 189.77589004412974C585.0997682443187 189.77589004412974 568.1335073460153 184.53927249149 551.9346903987624 174.06603738621055L565.1312266124273 154.37622539777874C573.0906453099665 159.12412864282777 579.7951556575794 162.40563898336154 585.2397580204062 164.22100640112316C590.8268499767503 166.1761136132291 596.5514318917518 167.15354222841057 602.4160035828405 167.15354222841057C610.6554018325544 167.15354222841057 617.0799326279927 164.9892002974026 621.6870961517252 160.66026645364366C626.296759492888 156.3310826281417 628.5990913460392 149.8378068533748 628.5990913460392 141.1799391658569V132.59181638463969C621.1996317528497 141.66865347344765 610.7953916086418 146.2070720178516 597.3888707308458 146.2070720178516C583.7048701183053 146.2070720178516 572.3931962469596 141.1799391658569 563.456348934239 131.12542348012448C554.659491397606 121.07115777613507 550.2598127205741 108.08435624485824 550.2598127205741 92.165018886294C550.2598127205741 76.3851713403311 554.7294862856496 63.46811471535494 563.6663335983701 53.413849011365535C572.6031809110907 43.21984351303176 583.8448598943927 38.122715772993374 597.3888707308458 38.122715772993374C612.1927895520853 38.122715772993374 623.0844940951688 43.28958841933243 630.0664841775265 53.62333371201056V41.68370570221588ZM622.1070654799875 114.57763201962514C626.9942085558947 108.85230015939467 629.4390300025634 101.3813457877033 629.4390300025634 92.165018886294C629.4390300025634 82.9484420031417 626.9942085558947 75.54723253775099 622.1070654799875 69.96164047186487C617.2199224040801 64.23605862989139 611.0053762727728 61.37351769064765 603.4634270860657 61.37351769064765C595.7839879407013 61.37351769064765 589.569441809394 64.23605862989139 584.8222885095742 69.96164047186487C580.0726353923241 75.54723253775099 577.700308651129 82.9484420031417 577.700308651129 92.165018886294C577.700308651129 101.3813457877033 580.0726353923241 108.85230015939467 584.8222885095742 114.57763201962514C589.569441809394 120.30321386159862 595.7839879407013 123.16575480084236 603.4634270860657 123.16575480084236C611.0053762727728 123.16575480084236 617.2199224040801 120.30321386159862 622.1070654799875 114.57763201962514Z" fill="#D9D9D9" fill-opacity="0.27"></path> </svg> </div></div>
+<div class="pm-item pm-item-3"><a class="pm-cell" href="#request">ЗАКАЗАТЬ</a></div>
+<div class="pm-item pm-item-4"><a class="pm-cell" href="#request">ЗАКАЗАТЬ</a></div>
+<div class="pm-item pm-item-5"><a class="pm-cell" href="#request">ЗАКАЗАТЬ</a></div>
+<div class="pm-item pm-item-6"><div class="pm-cell">Тарифы после теста</div></div>
+<div class="pm-item pm-item-7"><div class="pm-cell"></div></div>
+<div class="pm-item pm-item-8"><div class="pm-cell">START</div></div>
+<div class="pm-item pm-item-9"><div class="pm-cell">Цена:</div></div>
+<div class="pm-item pm-item-10"><div class="pm-cell">Бюджет на рекламу:</div></div>
+<div class="pm-item pm-item-11"><div class="pm-cell">Регионы:</div></div>
+<div class="pm-item pm-item-12"><div class="pm-cell">до 600 000 ₽</div></div>
+<div class="pm-item pm-item-13"><div class="pm-cell">неограниченно</div></div>
+<div class="pm-item pm-item-14"><div class="pm-cell">KPI:</div></div>
+<div class="pm-item pm-item-15"><div class="pm-cell">лиды</div></div>
+<div class="pm-item pm-item-16"><div class="pm-cell">45 000 ₽</div></div>
+<div class="pm-item pm-item-17"><div class="pm-cell"></div></div>
+<div class="pm-item pm-item-18"><div class="pm-cell"></div></div>
+<div class="pm-item pm-item-19"><div class="pm-cell">PROFI</div></div>
+<div class="pm-item pm-item-20"><div class="pm-cell">MaxIMUM</div></div>
+<div class="pm-item pm-item-21"><div class="pm-cell"></div></div>
+<div class="pm-item pm-item-22"><div class="pm-cell">Цена:</div></div>
+<div class="pm-item pm-item-23"><div class="pm-cell">Цена:</div></div>
+<div class="pm-item pm-item-24"><div class="pm-cell">Бюджет на рекламу:</div></div>
+<div class="pm-item pm-item-25"><div class="pm-cell">Бюджет на рекламу:</div></div>
+<div class="pm-item pm-item-26"><div class="pm-cell">KPI:</div></div>
+<div class="pm-item pm-item-27"><div class="pm-cell">KPI:</div></div>
+<div class="pm-item pm-item-28"><div class="pm-cell">600 000 - 1 000 000 ₽</div></div>
+<div class="pm-item pm-item-29"><div class="pm-cell">от 1 000 000 ₽</div></div>
+<div class="pm-item pm-item-30"><div class="pm-cell">8% </div></div>
+<div class="pm-item pm-item-31"><div class="pm-cell">от бюджета</div></div>
+<div class="pm-item pm-item-32"><div class="pm-cell">от бюджета</div></div>
+<div class="pm-item pm-item-33"><div class="pm-cell">но не более 100 000 ₽</div></div>
+<div class="pm-item pm-item-34"><div class="pm-cell">7%</div></div>
+<div class="pm-item pm-item-35"><div class="pm-cell">Финансовые гарантии в договоре</div></div>
+<div class="pm-item pm-item-36"><div class="pm-cell">Финансовые гарантии в договоре</div></div>
+<div class="pm-item pm-item-37"><div class="pm-cell">Финансовые гарантии в договоре</div></div>
+<div class="pm-item pm-item-38"><div class="pm-cell">лиды + заявки</div></div>
+<div class="pm-item pm-item-39"><div class="pm-cell">заявки + продажи + ROMI</div></div>
+<div class="pm-item pm-item-40"><div class="pm-cell"></div></div>
+<div class="pm-item pm-item-41"><div class="pm-cell"></div></div>
+<div class="pm-item pm-item-42"><div class="pm-cell">Регионы:</div></div>
+<div class="pm-item pm-item-43"><div class="pm-cell">Регионы:</div></div>
+<div class="pm-item pm-item-44"><div class="pm-cell">неограниченно</div></div>
+<div class="pm-item pm-item-45"><div class="pm-cell">неограниченно</div></div>
+<div class="pm-item pm-item-46"><div class="pm-cell"><svg></svg> </div></div>
+</section>
+<section class="pm-section pm-section--context-section-51" aria-label="Тарифы после теста"><div class="pm-surface" aria-hidden="true"><div class="pm-carrier"></div></div>
+<div class="pm-item pm-item-1"><div class="pm-cell"></div></div>
+<div class="pm-item pm-item-2"><div class="pm-cell"><svg viewBox="0 0 655.2021484375 189.7763671875" fill="none"><path d="M107.24641744227812 12.986876525799731C116.1835147367417 21.505154408019063 120.65218837484501 32.81635331405296 120.65218837484501 46.92032325485561C120.65218837484501 61.02429319565827 116.1835147367417 72.33546710351786 107.24641744227812 80.85384497843441C98.44880996041587 89.37197287160794 86.57917683866486 93.6311618090662 71.6372680952821 93.6311618090662H29.32510829113113V148.72063844384897H0V0H71.6372680952821C86.57917683866486 0 98.44880996041587 4.328958841933243 107.24641744227812 12.986876525799731ZM66.40065054264237 24.298025435485027H29.32510829113113V69.33318636992978H66.40065054264237C74.22057942758012 69.33318636992978 80.36488068910066 67.37807915782382 84.83355432720396 63.46811471535494C89.30222796530725 59.55815027288607 91.5365647843589 54.042053131557616 91.5365647843589 46.92032325485561C91.5365647843589 39.79859337815361 89.30222796530725 34.28249623682516 84.83355432720396 30.37253179435628C80.50462048344501 26.322827557543043 74.36031922192448 24.298025435485027 66.40065054264237 24.298025435485027Z" fill="#D9D9D9" fill-opacity="0.27"></path><path d="M208.55251872533444 43.35933332563311L203.73487057398478 67.23858934522248C198.5679979276457 65.84194134700795 194.02957938324172 65.14374233877217 190.11961494077283 65.14374233877217C182.8581452697265 65.14374233877217 177.132563427753 67.86679346541457 172.94336937833842 73.31289571869934C168.75392534718085 78.7589979719841 166.65932832247356 86.29994723171917 166.65932832247356 95.93524353441852V148.72063844384897H139.4288170560497V41.68370570221588H164.77421599841128V57.39355836013509C170.3600580460404 45.942894639674144 179.297155340504 40.217312797700664 191.58575786354504 40.217312797700664C196.19392131424968 40.217312797700664 201.8495082681795 41.26473630092582 208.55251872533444 43.35933332563311Z" fill="#D9D9D9" fill-opacity="0.27"></path><path d="M249.70926291327856 41.68370570221588V148.72063844384897H222.47875164685473V41.68370570221588H249.70926291327856ZM249.70926291327856 0V25.554883643006608H222.47875164685473V0H249.70926291327856Z" fill="#D9D9D9" fill-opacity="0.27"></path><path d="M323.4713758241726 61.164032990002625C314.951998022284 61.164032990002625 308.17999260405736 64.37579842423574 303.1528597520627 70.79932929270198C298.26571667615536 77.08337034856686 295.82089522948655 85.18277882219334 295.82089522948655 95.09730473183839C295.82089522948655 105.01208062322647 298.26571667615536 113.11148909685294 303.1528597520627 119.39553015271784C308.04000282797 125.67932122683972 314.7420133581529 128.82134175477216 323.2613911600415 128.82134175477216C328.2885240120362 128.82134175477216 332.9656824238125 127.56468353264498 337.29536621280045 125.05111710664762C341.7650397778758 122.53730069890727 346.79217262987055 118.27836174319202 352.37676476878454 112.27355029427282L370.3904491703131 127.35519883199996C363.1284795357807 136.43203592080792 355.79901483063475 142.85556678927415 348.397055420015 146.62604141914167C341.13508578548266 150.25677625466486 332.6182078010242 152.07214367242642 322.84142183177937 152.07214367242642C306.5051149258692 152.07214367242642 293.3085787122043 146.90527102608738 283.25431300821487 136.57152573340926C273.2000473042255 126.23803042247413 268.17291445223077 112.41329008861717 268.17291445223077 95.09730473183839C268.17291445223077 77.78156935680263 273.2675423748391 63.95682902294568 283.46179785491586 53.62333371201056C293.65605333499263 43.28958841933243 306.99257932474484 38.122715772993374 323.4713758241726 38.122715772993374C332.5482129129805 38.122715772993374 340.5776264985633 39.728598490109924 347.55961658092093 42.940363924343046C354.68159643936593 46.01263954597482 361.5935916336799 51.17951219231389 368.2956021638628 58.44098186336024L351.32934126555944 75.1982580245046C345.74474912664533 69.89164558382117 340.8551062333079 66.260910748298 336.6679120378374 64.30605351793507C332.47821802493684 62.21120651148476 328.0785393479052 61.164032990002625 323.4713758241726 61.164032990002625Z" fill="#D9D9D9" fill-opacity="0.27"></path><path d="M411.7174309252492 41.68370570221588V148.72063844384897H384.48691965882534V41.68370570221588H411.7174309252492ZM411.7174309252492 0V25.554883643006608H384.48691965882534V0H411.7174309252492Z" fill="#D9D9D9" fill-opacity="0.27"></path><path d="M531.5611783431897 75.40774272514965V148.72063844384897H504.3306670767658V83.57689610507678C504.3306670767658 76.45491624663177 502.5857945105339 71.008813993347 499.09354956064004 67.23858934522248C495.7437942042636 63.46811471535494 490.8566511283563 61.58300239129269 484.432120332918 61.58300239129269C478.1475793135671 61.58300239129269 472.980456685485 63.67759941599998 468.9307524486718 67.86679346541457C464.88104821185857 72.05623749657215 462.8561960934519 77.50233974985693 462.8561960934519 84.20510022526886V148.72063844384897H435.6256848270281V41.68370570221588H460.9713337511327V53.83256843091258C468.23330338566507 43.35933332563311 478.9850181526612 38.122715772993374 493.2289778695512 38.122715772993374C505.23810080390354 38.122715772993374 514.5949174448863 41.54396590787152 521.2969279750693 48.38646617762782C528.1414280987696 55.08947663478276 531.5611783431897 64.09656881729003 531.5611783431897 75.40774272514965Z" fill="#D9D9D9" fill-opacity="0.27"></path><path d="M630.0664841775265 41.68370570221588H655.2021484375V143.4840208912092C655.2021484375 158.14670002764632 650.3850002496364 169.52761884180657 640.7482040564789 177.62677733369003C631.1139076807516 185.7261858073165 618.4748307540061 189.77589004412974 602.8359729111027 189.77589004412974C585.0997682443187 189.77589004412974 568.1335073460153 184.53927249149 551.9346903987624 174.06603738621055L565.1312266124273 154.37622539777874C573.0906453099665 159.12412864282777 579.7951556575794 162.40563898336154 585.2397580204062 164.22100640112316C590.8268499767503 166.1761136132291 596.5514318917518 167.15354222841057 602.4160035828405 167.15354222841057C610.6554018325544 167.15354222841057 617.0799326279927 164.9892002974026 621.6870961517252 160.66026645364366C626.296759492888 156.3310826281417 628.5990913460392 149.8378068533748 628.5990913460392 141.1799391658569V132.59181638463969C621.1996317528497 141.66865347344765 610.7953916086418 146.2070720178516 597.3888707308458 146.2070720178516C583.7048701183053 146.2070720178516 572.3931962469596 141.1799391658569 563.456348934239 131.12542348012448C554.659491397606 121.07115777613507 550.2598127205741 108.08435624485824 550.2598127205741 92.165018886294C550.2598127205741 76.3851713403311 554.7294862856496 63.46811471535494 563.6663335983701 53.413849011365535C572.6031809110907 43.21984351303176 583.8448598943927 38.122715772993374 597.3888707308458 38.122715772993374C612.1927895520853 38.122715772993374 623.0844940951688 43.28958841933243 630.0664841775265 53.62333371201056V41.68370570221588ZM622.1070654799875 114.57763201962514C626.9942085558947 108.85230015939467 629.4390300025634 101.3813457877033 629.4390300025634 92.165018886294C629.4390300025634 82.9484420031417 626.9942085558947 75.54723253775099 622.1070654799875 69.96164047186487C617.2199224040801 64.23605862989139 611.0053762727728 61.37351769064765 603.4634270860657 61.37351769064765C595.7839879407013 61.37351769064765 589.569441809394 64.23605862989139 584.8222885095742 69.96164047186487C580.0726353923241 75.54723253775099 577.700308651129 82.9484420031417 577.700308651129 92.165018886294C577.700308651129 101.3813457877033 580.0726353923241 108.85230015939467 584.8222885095742 114.57763201962514C589.569441809394 120.30321386159862 595.7839879407013 123.16575480084236 603.4634270860657 123.16575480084236C611.0053762727728 123.16575480084236 617.2199224040801 120.30321386159862 622.1070654799875 114.57763201962514Z" fill="#D9D9D9" fill-opacity="0.27"></path></svg> </div></div>
+<div class="pm-item pm-item-3"><a class="pm-cell" href="#request">ЗАКАЗАТЬ</a></div>
+<div class="pm-item pm-item-4"><a class="pm-cell" href="#request">ЗАКАЗАТЬ</a></div>
+<div class="pm-item pm-item-5"><a class="pm-cell" href="#request">ЗАКАЗАТЬ</a></div>
+<div class="pm-item pm-item-6"><div class="pm-cell">Тарифы после теста</div></div>
+<div class="pm-item pm-item-7"><div class="pm-cell"></div></div>
+<div class="pm-item pm-item-8"><div class="pm-cell">Цена:</div></div>
+<div class="pm-item pm-item-9"><div class="pm-cell">45 000 ₽</div></div>
+<div class="pm-item pm-item-10"><div class="pm-cell">START</div></div>
+<div class="pm-item pm-item-11"><div class="pm-cell">Бюджет на рекламу:</div></div>
+<div class="pm-item pm-item-12"><div class="pm-cell">Финансовые гарантии в договоре</div></div>
+<div class="pm-item pm-item-13"><div class="pm-cell">KPI:</div></div>
+<div class="pm-item pm-item-14"><div class="pm-cell">лиды</div></div>
+<div class="pm-item pm-item-15"><div class="pm-cell">Регионы:</div></div>
+<div class="pm-item pm-item-16"><div class="pm-cell">до 600 000 ₽</div></div>
+<div class="pm-item pm-item-17"><div class="pm-cell">неограниченно</div></div>
+<div class="pm-item pm-item-18"><div class="pm-cell"></div></div>
+<div class="pm-item pm-item-19"><div class="pm-cell"></div></div>
+<div class="pm-item pm-item-20"><div class="pm-cell">PROFI</div></div>
+<div class="pm-item pm-item-21"><div class="pm-cell">MaxIMUM</div></div>
+<div class="pm-item pm-item-22"><div class="pm-cell">Цена:</div></div>
+<div class="pm-item pm-item-23"><div class="pm-cell">8%</div></div>
+<div class="pm-item pm-item-24"><div class="pm-cell">Цена:</div></div>
+<div class="pm-item pm-item-25"><div class="pm-cell">7%</div></div>
+<div class="pm-item pm-item-26"><div class="pm-cell"></div></div>
+<div class="pm-item pm-item-27"><div class="pm-cell">Бюджет на рекламу:</div></div>
+<div class="pm-item pm-item-28"><div class="pm-cell">от бюджета</div></div>
+<div class="pm-item pm-item-29"><div class="pm-cell">от бюджета</div></div>
+<div class="pm-item pm-item-30"><div class="pm-cell">Бюджет на рекламу:</div></div>
+<div class="pm-item pm-item-31"><div class="pm-cell">но не более 100 000 ₽</div></div>
+<div class="pm-item pm-item-32"><div class="pm-cell">KPI:</div></div>
+<div class="pm-item pm-item-33"><div class="pm-cell">лиды + заявки</div></div>
+<div class="pm-item pm-item-34"><div class="pm-cell">KPI:</div></div>
+<div class="pm-item pm-item-35"><div class="pm-cell">заявки + <br>продажи + ROMI</div></div>
+<div class="pm-item pm-item-36"><div class="pm-cell">от 600 000 до 1 000 000 ₽</div></div>
+<div class="pm-item pm-item-37"><div class="pm-cell">от 1 000 000 ₽</div></div>
+<div class="pm-item pm-item-38"><div class="pm-cell"></div></div>
+<div class="pm-item pm-item-39"><div class="pm-cell"></div></div>
+<div class="pm-item pm-item-40"><div class="pm-cell">Регионы:</div></div>
+<div class="pm-item pm-item-41"><div class="pm-cell">Регионы:</div></div>
+<div class="pm-item pm-item-42"><div class="pm-cell">неограниченно</div></div>
+<div class="pm-item pm-item-43"><div class="pm-cell">неограниченно</div></div>
+<div class="pm-item pm-item-44"><div class="pm-cell">Финансовые гарантии в договоре</div></div>
+<div class="pm-item pm-item-45"><div class="pm-cell">Финансовые гарантии в договоре</div></div>
+</section>
+<section class="pm-section pm-section--context-section-11" aria-label="Сертификация Promo Group"><div class="pm-surface" aria-hidden="true"><div class="pm-carrier"></div></div>
+<div class="pm-item pm-item-1"><div class="pm-cell"></div></div>
+<div class="pm-item pm-item-2"><div class="pm-cell">Возможность подключить эксперта из Яндекса</div></div>
+<div class="pm-item pm-item-3"><div class="pm-cell">Быстрый доступ к аналитическим отчетам по рынку и конкурентам, приоритетное решение сложных вопросов с тех. поддержкой, возможность аудита рекламных кампаний со стороны Яндекс.</div></div>
+<div class="pm-item pm-item-4"><div class="pm-cell"></div></div>
+<div class="pm-item pm-item-5"><div class="pm-cell">Специалисты с подтвержденной экспертностью</div></div>
+<div class="pm-item pm-item-6"><div class="pm-cell">Наши специалисты проходят ежегодную сертификацию, подтверждая свою экспертность . Мы всегда в курсе последних нововведений и трендов в индустрии. Это дополнительно позволяет нам предлагать вам самые современные и эффективные решения.</div></div>
+<div class="pm-item pm-item-7"><div class="pm-cell"></div></div>
+<div class="pm-item pm-item-8"><div class="pm-cell">Используя новейшие инструменты и возможности рекламной системы вы получите преимущество перед своими конкурентами и своевременно обратитесь к нужной аудитории.</div></div>
+<div class="pm-item pm-item-9"><div class="pm-cell">Ранний доступ к новым рекламным инструментам и возможностям</div></div>
+<div class="pm-item pm-item-10"><button class="pm-cell" type="button">Я. Бизнес</button></div>
+<div class="pm-item pm-item-11"><button class="pm-cell" type="button">Геоперфоманс</button></div>
+<div class="pm-item pm-item-12"><button class="pm-cell" type="button">Я. Метрика</button></div>
+<div class="pm-item pm-item-13"><button class="pm-cell" type="button">Медийная реклама</button></div>
+<div class="pm-item pm-item-14"><button class="pm-cell" type="button">Я. Директ</button></div>
+<div class="pm-item pm-item-15"><button class="pm-cell" type="button">ПромоСтраницы</button></div>
+<div class="pm-item pm-item-16"><div class="pm-cell"><img src="https://pr-up.ru/assets/marketing/home-0fdbce5e1945.png" alt="" decoding="async"></div></div>
+<div class="pm-item pm-item-17"><button class="pm-cell" type="button">1С- Битрикс</button></div>
+<div class="pm-item pm-item-18"><div class="pm-cell"></div></div>
+<div class="pm-item pm-item-19"><button class="pm-cell" type="button">Яндекс</button></div>
+<div class="pm-item pm-item-20"><h2 class="pm-cell">Наши специалисты имеют сертификаты по Яндекс. Директу, Яндекс.Метрике и медийной рекламе</h2></div>
+<div class="pm-item pm-item-21"><div class="pm-cell">Развивайте ваш бизнес, привлекайте больше клиентов, увеличивайте продажи и прибыль с помощью наших услуг!</div></div>
+<div class="pm-item pm-item-22"><div class="pm-cell"></div></div>
+<div class="pm-item pm-item-23"><div class="pm-cell"></div></div>
+<div class="pm-item pm-item-24"><div class="pm-cell"></div></div>
+<div class="pm-item pm-item-25"><div class="pm-cell"></div></div>
+<div class="pm-item pm-item-26"><div class="pm-cell"></div></div>
+<div class="pm-item pm-item-27"><div class="pm-cell"></div></div>
+<div class="pm-item pm-item-28"><div class="pm-cell"></div></div>
+<div class="pm-item pm-item-29 pm-item--gallery"><div class="pm-gallery" data-gallery data-slide-duration="300" data-zoomable><div class="pm-gallery-stage"><div class="pm-gallery-image" role="img" aria-label="Сертификаты, отзывы и проекты Promo Group" data-image-url="https://pr-up.ru/assets/marketing/home-59abe0dcb247.png"></div></div><span hidden data-slides>["https://pr-up.ru/assets/marketing/home-59abe0dcb247.png", "https://pr-up.ru/assets/marketing/home-1a0a0d3cac23.jpg", "https://pr-up.ru/assets/marketing/home-b423a5ea1c05.jpg", "https://pr-up.ru/assets/marketing/home-64c9c0cd5d6d.jpg", "https://pr-up.ru/assets/marketing/home-04a75dec726a.png", "https://pr-up.ru/assets/marketing/home-4ef02f061d30.jpg", "https://pr-up.ru/assets/marketing/home-d997823b5a7b.jpg", "https://pr-up.ru/assets/marketing/home-c6df83183df4.jpg", "https://pr-up.ru/assets/marketing/home-68b6c33483b7.jpg"]</span><button class="pm-gallery-prev" type="button" data-step="-1" aria-label="Предыдущий слайд"><svg viewBox="0 0 94 94" fill="none"><path d="M39 68L60 47L39 26" stroke="black" vector-effect="non-scaling-stroke" style="stroke-width: 1px; stroke: rgb(0, 0, 0);"></path></svg></button><button class="pm-gallery-next" type="button" data-step="1" aria-label="Следующий слайд"><svg viewBox="0 0 94 94" fill="none"><path d="M39 68L60 47L39 26" stroke="black" vector-effect="non-scaling-stroke" style="stroke-width: 1px; stroke: rgb(0, 0, 0);"></path></svg></button></div></div>
+<div class="pm-item pm-item-33"><h2 class="pm-cell">Мы сертифицированное АГЕНТСТВО Яндекс</h2></div>
+<div class="pm-item pm-item-35"><a class="pm-cell" href="https://pr-up.ru/assets/marketing/home-0e4e3fcd6662.png" data-zoom-image="https://pr-up.ru/assets/marketing/home-0e4e3fcd6662.png" aria-label="Увеличить сертификат"><img src="https://pr-up.ru/assets/marketing/home-0e4e3fcd6662.png" alt="" decoding="async"></a></div>
+<div class="pm-item pm-item-36"><a class="pm-cell" href="https://pr-up.ru/assets/marketing/home-122855b59959.png" data-zoom-image="https://pr-up.ru/assets/marketing/home-122855b59959.png" aria-label="Увеличить сертификат"><img src="https://pr-up.ru/assets/marketing/home-122855b59959.png" alt="" decoding="async"></a></div>
+<div class="pm-item pm-item-37"><a class="pm-cell" href="https://pr-up.ru/assets/marketing/home-a7f102c76451.png" data-zoom-image="https://pr-up.ru/assets/marketing/home-a7f102c76451.png" aria-label="Увеличить сертификат"><img src="https://pr-up.ru/assets/marketing/home-a7f102c76451.png" alt="" decoding="async"></a></div>
+</section>
+<section class="pm-section pm-section--context-section-45" aria-label="Сертификация Promo Group"><div class="pm-surface" aria-hidden="true"><div class="pm-carrier"></div></div>
+<div class="pm-item pm-item-1"><h2 class="pm-cell">Мы сертифицированное АГЕНТСТВО Яндекс</h2></div>
+<div class="pm-item pm-item-2"><div class="pm-cell"></div></div>
+<div class="pm-item pm-item-3"><h2 class="pm-cell">Наши специалисты имеют сертификаты по Яндекс. Директу, Яндекс. Метрике и медийной рекламе</h2></div>
+<div class="pm-item pm-item-4"><div class="pm-cell">Развивайте ваш бизнес, привлекайте больше клиентов, увеличивайте продажи и прибыль с помощью наших услуг!</div></div>
+<div class="pm-item pm-item-5"><div class="pm-cell"></div></div>
+<div class="pm-item pm-item-6"><div class="pm-cell"></div></div>
+<div class="pm-item pm-item-7"><div class="pm-cell">Яндекс</div></div>
+<div class="pm-item pm-item-8"><div class="pm-cell">1С- Битрикс</div></div>
+<div class="pm-item pm-item-9"><div class="pm-cell"></div></div>
+<div class="pm-item pm-item-10"><div class="pm-cell">Возможность подключить эксперта из Яндекса</div></div>
+<div class="pm-item pm-item-11"><div class="pm-cell">Быстрый доступ к аналитическим отчетам по рынку и конкурентам, приоритетное решение сложных вопросов с техподдержкой, возможность аудита рекламных кампаний со стороны Яндекс.</div></div>
+<div class="pm-item pm-item-12"><div class="pm-cell"></div></div>
+<div class="pm-item pm-item-13"><div class="pm-cell">Специалисты с подтвержденной экспертностью</div></div>
+<div class="pm-item pm-item-14"><div class="pm-cell">Наши специалисты проходят ежегодную сертификацию, подтверждая свою экспертность. Мы всегда в курсе последних нововведений и трендов в индустрии. Это дополнительно позволяет нам предлагать вам самые современные и эффективные решения.</div></div>
+<div class="pm-item pm-item-15"><div class="pm-cell"></div></div>
+<div class="pm-item pm-item-16"><div class="pm-cell">Ранний доступ к новым рекламным инструментам и возможностям</div></div>
+<div class="pm-item pm-item-17"><div class="pm-cell">Используя новейшие инструменты и возможности рекламной системы вы получите преимущество перед своими конкурентами и своевременно обратитесь к нужной аудитории.</div></div>
+<div class="pm-item pm-item-18"><div class="pm-cell"></div></div>
+<div class="pm-item pm-item-19"><div class="pm-cell">Я. Бизнес</div></div>
+<div class="pm-item pm-item-20"><div class="pm-cell"></div></div>
+<div class="pm-item pm-item-21"><div class="pm-cell">Геоперфоманс</div></div>
+<div class="pm-item pm-item-22"><div class="pm-cell"></div></div>
+<div class="pm-item pm-item-23"><div class="pm-cell">Я. Метрика</div></div>
+<div class="pm-item pm-item-24"><div class="pm-cell"></div></div>
+<div class="pm-item pm-item-25"><div class="pm-cell">Медийная реклама</div></div>
+<div class="pm-item pm-item-26"><div class="pm-cell"></div></div>
+<div class="pm-item pm-item-27"><div class="pm-cell">Я. Директ</div></div>
+<div class="pm-item pm-item-28"><div class="pm-cell"></div></div>
+<div class="pm-item pm-item-29"><div class="pm-cell">ПромоСтраницы</div></div>
+<div class="pm-item pm-item-30 pm-item--gallery"><div class="pm-gallery" data-gallery data-slide-duration="300"><div class="pm-gallery-stage"><div class="pm-gallery-image" role="img" aria-label="Сертификаты, отзывы и проекты Promo Group" data-image-url="https://pr-up.ru/assets/marketing/home-2372f76f5481.png"></div></div><span hidden data-slides>["https://pr-up.ru/assets/marketing/home-2372f76f5481.png", "https://pr-up.ru/assets/marketing/home-1f54e0e4a717.jpg", "https://pr-up.ru/assets/marketing/home-9894d1e269ec.jpg", "https://pr-up.ru/assets/marketing/home-f5c7a2c3fd43.png", "https://pr-up.ru/assets/marketing/home-ce2761b25de7.jpg", "https://pr-up.ru/assets/marketing/home-82c31eb40230.jpg", "https://pr-up.ru/assets/marketing/home-2f928392b136.jpg", "https://pr-up.ru/assets/marketing/home-a985e02d3cec.jpg"]</span><button class="pm-gallery-prev" type="button" data-step="-1" aria-label="Предыдущий слайд"><svg viewBox="0 0 94 94" fill="none"><path d="M39 68L60 47L39 26" stroke="black" vector-effect="non-scaling-stroke" style="stroke-width: 1px; stroke: rgb(0, 0, 0);"></path></svg></button><button class="pm-gallery-next" type="button" data-step="1" aria-label="Следующий слайд"><svg viewBox="0 0 94 94" fill="none"><path d="M39 68L60 47L39 26" stroke="black" vector-effect="non-scaling-stroke" style="stroke-width: 1px; stroke: rgb(0, 0, 0);"></path></svg></button></div></div>
+<div class="pm-item pm-item-31 pm-item--gallery"><div class="pm-gallery" data-gallery data-slide-duration="300"><div class="pm-gallery-stage"><div class="pm-gallery-image" role="img" aria-label="Сертификаты, отзывы и проекты Promo Group" data-image-url="https://pr-up.ru/assets/marketing/home-8f6cd11507f2.png"></div></div><span hidden data-slides>["https://pr-up.ru/assets/marketing/home-8f6cd11507f2.png", "https://pr-up.ru/assets/marketing/home-b14f47a8720c.png", "https://pr-up.ru/assets/marketing/home-b0a0e8beb296.png", "https://pr-up.ru/assets/marketing/home-a08665ce67cd.png", "https://pr-up.ru/assets/marketing/home-d50441b1bce9.png", "https://pr-up.ru/assets/marketing/home-6ba2ab1e53d2.png", "https://pr-up.ru/assets/marketing/home-9b10b1a007f0.jpg", "https://pr-up.ru/assets/marketing/home-71722456aa69.jpg"]</span><button class="pm-gallery-prev" type="button" data-step="-1" aria-label="Предыдущий слайд"><svg viewBox="0 0 94 94" fill="none"><path d="M39 68L60 47L39 26" stroke="black" vector-effect="non-scaling-stroke" style="stroke-width: 1px; stroke: rgb(0, 0, 0);"></path></svg></button><button class="pm-gallery-next" type="button" data-step="1" aria-label="Следующий слайд"><svg viewBox="0 0 94 94" fill="none"><path d="M39 68L60 47L39 26" stroke="black" vector-effect="non-scaling-stroke" style="stroke-width: 1px; stroke: rgb(0, 0, 0);"></path></svg></button></div></div>
+</section>
+<section class="pm-section pm-section--context-section-22" aria-label="Нам доверяют"><div class="pm-surface" aria-hidden="true"><div class="pm-carrier"></div></div>
+<div class="pm-item pm-item-1"><div class="pm-cell">Нам доверяют</div></div>
+<div class="pm-item pm-item-2 pm-item--gallery"><div class="pm-gallery" data-gallery data-slide-duration="600"><div class="pm-gallery-stage"><div class="pm-gallery-image" role="img" aria-label="Сертификаты, отзывы и проекты Promo Group" data-image-url="https://pr-up.ru/assets/marketing/home-2385858cdd60.png"></div></div><span hidden data-slides>["https://pr-up.ru/assets/marketing/home-2385858cdd60.png", "https://pr-up.ru/assets/marketing/home-c2562de7affd.png", "https://pr-up.ru/assets/marketing/home-028000e6fb3c.jpg", "https://pr-up.ru/assets/marketing/home-790fdaab838b.jpg", "https://pr-up.ru/assets/marketing/home-709c5ce3c734.jpg"]</span><button class="pm-gallery-prev" type="button" data-step="-1" aria-label="Предыдущий слайд"><svg viewBox="0 0 94 94" fill="none"><path d="M39 68L60 47L39 26" stroke="black" vector-effect="non-scaling-stroke" style="stroke-width: 1px; stroke: rgb(0, 0, 0);"></path></svg></button><button class="pm-gallery-next" type="button" data-step="1" aria-label="Следующий слайд"><svg viewBox="0 0 94 94" fill="none"><path d="M39 68L60 47L39 26" stroke="black" vector-effect="non-scaling-stroke" style="stroke-width: 1px; stroke: rgb(0, 0, 0);"></path></svg></button></div></div>
+</section>
+<section class="pm-section pm-section--context-section-50" aria-label="Нам доверяют"><div class="pm-surface" aria-hidden="true"><div class="pm-carrier"></div></div>
+<div class="pm-item pm-item-1 pm-item--gallery"><div class="pm-gallery" data-gallery data-slide-duration="300"><div class="pm-gallery-stage"><div class="pm-gallery-image" role="img" aria-label="Сертификаты, отзывы и проекты Promo Group" data-image-url="https://pr-up.ru/assets/marketing/home-25da92564735.png"></div></div><span hidden data-slides>["https://pr-up.ru/assets/marketing/home-25da92564735.png", "https://pr-up.ru/assets/marketing/home-fc2a0e823b11.png", "https://pr-up.ru/assets/marketing/home-8f5cff764ed3.png", "https://pr-up.ru/assets/marketing/home-caa370f99e59.png", "https://pr-up.ru/assets/marketing/home-401340588b70.png", "https://pr-up.ru/assets/marketing/home-0d5812b4b766.png", "https://pr-up.ru/assets/marketing/home-9dd3318ecb91.png", "https://pr-up.ru/assets/marketing/home-6a52e5bed18e.png", "https://pr-up.ru/assets/marketing/home-937627f7af34.png", "https://pr-up.ru/assets/marketing/home-9b7fa9f3d9f2.png", "https://pr-up.ru/assets/marketing/home-f028fadd9cf3.png", "https://pr-up.ru/assets/marketing/home-12fa3020d0e9.png", "https://pr-up.ru/assets/marketing/home-7447b0857545.png", "https://pr-up.ru/assets/marketing/home-b1c4f9fcd972.png", "https://pr-up.ru/assets/marketing/home-d746ea288369.png", "https://pr-up.ru/assets/marketing/home-8722ba5a3624.png", "https://pr-up.ru/assets/marketing/home-a21e0752f15f.png", "https://pr-up.ru/assets/marketing/home-f9398456cb94.png", "https://pr-up.ru/assets/marketing/home-bc8ef9310938.png", "https://pr-up.ru/assets/marketing/home-df440a1fd648.png", "https://pr-up.ru/assets/marketing/home-8cd06f610992.png", "https://pr-up.ru/assets/marketing/home-a34612c72bbb.png", "https://pr-up.ru/assets/marketing/home-2dbfad446633.png", "https://pr-up.ru/assets/marketing/home-fd8e6edd4ba8.png", "https://pr-up.ru/assets/marketing/home-db84e55d1499.png", "https://pr-up.ru/assets/marketing/home-51ebfa2fd0da.png", "https://pr-up.ru/assets/marketing/home-4b414d00d3bf.png", "https://pr-up.ru/assets/marketing/home-6c4c38bea6e3.png", "https://pr-up.ru/assets/marketing/home-6e130c0fc7bd.png"]</span><button class="pm-gallery-prev" type="button" data-step="-1" aria-label="Предыдущий слайд"><svg viewBox="0 0 94 94" fill="none"><path d="M39 68L60 47L39 26" stroke="black" vector-effect="non-scaling-stroke" style="stroke-width: 1px; stroke: rgb(0, 0, 0);"></path></svg></button><button class="pm-gallery-next" type="button" data-step="1" aria-label="Следующий слайд"><svg viewBox="0 0 94 94" fill="none"><path d="M39 68L60 47L39 26" stroke="black" vector-effect="non-scaling-stroke" style="stroke-width: 1px; stroke: rgb(0, 0, 0);"></path></svg></button></div></div>
+<div class="pm-item pm-item-2"><div class="pm-cell">Нам доверяют</div></div>
+</section>
+<div class="pg-preview-anchor" id="reviews"></div>
+<section class="pm-section pm-section--context-section-36" aria-label="Отзывы"><div class="pm-surface" aria-hidden="true"><div class="pm-carrier"></div></div>
+<div class="pm-item pm-item-1"><div class="pm-cell"></div></div>
+<div class="pm-item pm-item-2"><div class="pm-cell"></div></div>
+<div class="pm-item pm-item-3"><h2 class="pm-cell">Отзывы</h2></div>
+<div class="pm-item pm-item-4"><div class="pm-cell"><a href="https://pr-up.ru/rekomendacii/">Смотреть рекомендации клиентов</a></div></div>
+<div class="pm-item pm-item-5"><div class="pm-cell"></div></div>
+<div class="pm-item pm-item-6"><div class="pm-cell"></div></div>
+<div class="pm-item pm-item-7"><div class="pm-cell"></div></div>
+<div class="pm-item pm-item-8"><div class="pm-cell"><svg viewBox="0 0 21.333251953125 18.185546875" fill="none"><path d="M4.605402586755087 17.11284014580305H2.1989720766715113C1.5344561619958212 17.11284014580305 0.9957617828511082 16.597418856172784 0.9957617828511082 15.961638335755815V14.810411719601653C0.9957617828511082 12.902995740029978 2.6118598039494003 11.356756677246093 4.605402586755087 11.356756677246093H5.808597996911337M10.621454055857104 4.4494217864280525C10.621454055857104 6.356837765999727 9.005360995980196 7.903076828783612 7.01181821317451 7.903076828783612C5.018275430368822 7.903076828783612 3.4021823704919147 6.356837765999727 3.4021823704919147 4.4494217864280525C3.4021823704919147 2.5420058068563773 5.018275430368822 0.9957617828511082 7.01181821317451 0.9957617828511082C9.005360995980196 0.9957617828511082 10.621454055857104 2.5420058068563773 10.621454055857104 4.4494217864280525ZM19.574647808979833 6.244069203931232C19.78785629797647 6.447975402832031 19.95698433497229 6.690058200286155 20.072357538267624 6.95652540084484C20.187755547669877 7.2229677952966025 20.247141367641714 7.5085605042923325 20.247141367641714 7.796981109477198C20.247141367641714 8.085401714662064 20.187755547669877 8.370994423657795 20.072357538267624 8.637461624216478C19.95698433497229 8.903904018668241 19.78785629797647 9.146011622229286 19.574647808979833 9.349893015023165L12.272374889852834 16.336657060206214L8.215038429437682 17.11284014580305L9.026272544115644 13.230833249114282L16.328570269349562 6.244069203931232C16.54167953391851 6.040088586709666 16.794701824525347 5.878278351255904 17.073175180834394 5.767866369345022C17.351673343250365 5.6574543874341385 17.650165227845658 5.6006484025822125 17.951609039164698 5.6006484025822125C18.253052850483737 5.6006484025822125 18.55154473507903 5.6574543874341385 18.830042897495005 5.767866369345022C19.10851625380405 5.878278351255904 19.361538544410884 6.040088586709666 19.574647808979833 6.244069203931232Z" stroke="#FF8331" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"></path></svg> </div></div>
+<div class="pm-item pm-item-9"><div class="pm-cell"></div></div>
+<div class="pm-item pm-item-10"><div class="pm-cell"><svg viewBox="0 0 18 16.3515625" fill="none"><path d="M4.55555 4.348775H12.55555M4.55555 7.697525H9M16.1111 1H1.88889C1.65314 1 1.4270475 1.088205 1.26035 1.2452075C1.09365 1.4022125 1 1.615155 1 1.8371925V10.6875C1 10.909525 1.09365 11.122475 1.26035 11.279475C1.4270475 11.4365 1.65314 11.5247 1.88889 11.5247H6L9 15.35185L12 11.5247H16.1111C16.34685 11.5247 16.57295 11.4365 16.73965 11.279475C16.90635 11.122475 17 10.909525 17 10.6875V1.8371925C17 1.615155 16.90635 1.4022125 16.73965 1.2452075C16.57295 1.088205 16.34685 1 16.1111 1Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg> </div></div>
+<div class="pm-item pm-item-11"><div class="pm-cell"></div></div>
+<div class="pm-item pm-item-12"><div class="pm-cell"></div></div>
+<div class="pm-item pm-item-13 pm-item--gallery"><div class="pm-gallery" data-slide-duration="300" data-review-carousel="4" role="region" aria-label="Отзывы клиентов: рекомендательные письма" aria-roledescription="карусель"><div class="pm-gallery-stage"><div class="pm-gallery-image pm-review-window"><div class="pm-review-strip"><div class="pm-review-track"><button class="pm-review-document" type="button" data-review-index="0" data-zoom-image="https://pr-up.ru/assets/company-pages/source/f19744d53c6c76f0f95e.jpg" aria-label="Открыть: Рекомендательное письмо: Альтамед"><img src="https://pr-up.ru/assets/company-pages/source/f19744d53c6c76f0f95e.jpg" alt="Рекомендательное письмо: Альтамед" loading="eager" decoding="async"></button><button class="pm-review-document" type="button" data-review-index="1" data-zoom-image="https://pr-up.ru/assets/company-pages/source/f72e6e14c693e8a35d11.jpg" aria-label="Открыть: Рекомендательное письмо: Goldenmed"><img src="https://pr-up.ru/assets/company-pages/source/f72e6e14c693e8a35d11.jpg" alt="Рекомендательное письмо: Goldenmed" loading="eager" decoding="async"></button><button class="pm-review-document" type="button" data-review-index="2" data-zoom-image="https://pr-up.ru/assets/company-pages/source/a93041ca337b32322676.jpg" aria-label="Открыть: Рекомендательное письмо: Врач на дом"><img src="https://pr-up.ru/assets/company-pages/source/a93041ca337b32322676.jpg" alt="Рекомендательное письмо: Врач на дом" loading="eager" decoding="async"></button><button class="pm-review-document" type="button" data-review-index="3" data-zoom-image="https://pr-up.ru/assets/company-pages/source/068420e5fdc25ed784d1.jpg" aria-label="Открыть: Рекомендательное письмо: Carptoday"><img src="https://pr-up.ru/assets/company-pages/source/068420e5fdc25ed784d1.jpg" alt="Рекомендательное письмо: Carptoday" loading="eager" decoding="async"></button><button class="pm-review-document" type="button" data-review-index="4" data-zoom-image="https://pr-up.ru/assets/company-pages/source/cb32b61a8ec5f6ea6ffd.jpg" aria-label="Открыть: Рекомендательное письмо: Интеркоммерц"><img src="https://pr-up.ru/assets/company-pages/source/cb32b61a8ec5f6ea6ffd.jpg" alt="Рекомендательное письмо: Интеркоммерц" loading="lazy" decoding="async"></button><button class="pm-review-document" type="button" data-review-index="5" data-zoom-image="https://pr-up.ru/assets/company-pages/source/daf90f9706d7f72ae3df.jpg" aria-label="Открыть: Рекомендательное письмо: Гидрофорс"><img src="https://pr-up.ru/assets/company-pages/source/daf90f9706d7f72ae3df.jpg" alt="Рекомендательное письмо: Гидрофорс" loading="lazy" decoding="async"></button><button class="pm-review-document" type="button" data-review-index="6" data-zoom-image="https://pr-up.ru/assets/company-pages/source/29ee75a18d829a9a9025.jpg" aria-label="Открыть: Рекомендательное письмо: ODesign"><img src="https://pr-up.ru/assets/company-pages/source/29ee75a18d829a9a9025.jpg" alt="Рекомендательное письмо: ODesign" loading="lazy" decoding="async"></button><button class="pm-review-document" type="button" data-review-index="7" data-zoom-image="https://pr-up.ru/assets/company-pages/source/0fbda9773b105b152824.jpg" aria-label="Открыть: Рекомендательное письмо: Willagency"><img src="https://pr-up.ru/assets/company-pages/source/0fbda9773b105b152824.jpg" alt="Рекомендательное письмо: Willagency" loading="lazy" decoding="async"></button><button class="pm-review-document" type="button" data-review-index="8" data-zoom-image="https://pr-up.ru/assets/company-pages/source/7e0fc69ad80d9e4a981d.jpg" aria-label="Открыть: Рекомендательное письмо: Ампир Стиль"><img src="https://pr-up.ru/assets/company-pages/source/7e0fc69ad80d9e4a981d.jpg" alt="Рекомендательное письмо: Ампир Стиль" loading="lazy" decoding="async"></button><button class="pm-review-document" type="button" data-review-index="9" data-zoom-image="https://pr-up.ru/assets/company-pages/source/784ec96eab743796b0df.jpg" aria-label="Открыть: Рекомендательное письмо: Отзыв клиента №10"><img src="https://pr-up.ru/assets/company-pages/source/784ec96eab743796b0df.jpg" alt="Рекомендательное письмо: Отзыв клиента №10" loading="lazy" decoding="async"></button><button class="pm-review-document" type="button" data-review-index="10" data-zoom-image="https://pr-up.ru/assets/company-pages/source/d89aeadd9d6d80f6cb9c.jpg" aria-label="Открыть: Рекомендательное письмо: Отзыв клиента №11"><img src="https://pr-up.ru/assets/company-pages/source/d89aeadd9d6d80f6cb9c.jpg" alt="Рекомендательное письмо: Отзыв клиента №11" loading="lazy" decoding="async"></button><button class="pm-review-document" type="button" data-review-index="11" data-zoom-image="https://pr-up.ru/assets/company-pages/source/55698d5d42cb13018491.jpg" aria-label="Открыть: Рекомендательное письмо: Отзыв клиента №12"><img src="https://pr-up.ru/assets/company-pages/source/55698d5d42cb13018491.jpg" alt="Рекомендательное письмо: Отзыв клиента №12" loading="lazy" decoding="async"></button><button class="pm-review-document" type="button" data-review-index="12" data-zoom-image="https://pr-up.ru/assets/company-pages/source/5ed3e5b47a83bdab7d43.jpg" aria-label="Открыть: Рекомендательное письмо: Отзыв клиента №13"><img src="https://pr-up.ru/assets/company-pages/source/5ed3e5b47a83bdab7d43.jpg" alt="Рекомендательное письмо: Отзыв клиента №13" loading="lazy" decoding="async"></button></div></div></div></div><button class="pm-gallery-prev" type="button" data-step="-1" aria-label="Предыдущее письмо"><svg viewBox="0 0 94 94" fill="none"><path d="M39 68L60 47L39 26" stroke="black" vector-effect="non-scaling-stroke" style="stroke-width: 1px; stroke: rgb(255, 255, 255);"></path></svg></button><button class="pm-gallery-next" type="button" data-step="1" aria-label="Следующее письмо"><svg viewBox="0 0 94 94" fill="none"><path d="M39 68L60 47L39 26" stroke="black" vector-effect="non-scaling-stroke" style="stroke-width: 1px; stroke: rgb(255, 255, 255);"></path></svg></button><span class="pm-review-status" role="status" aria-live="polite"></span></div></div>
+</section>
+<section class="pm-section pm-section--context-section-54" aria-label="Отзывы"><div class="pm-surface" aria-hidden="true"><div class="pm-carrier"></div></div>
+<div class="pm-item pm-item-1"><div class="pm-cell"></div></div>
+<div class="pm-item pm-item-2"><div class="pm-cell"><a href="https://pr-up.ru/rekomendacii/">Смотреть рекомендации клиентов</a></div></div>
+<div class="pm-item pm-item-3"><h2 class="pm-cell">Отзывы</h2></div>
+<div class="pm-item pm-item-4"><div class="pm-cell"></div></div>
+<div class="pm-item pm-item-5"><div class="pm-cell"></div></div>
+<div class="pm-item pm-item-6"><div class="pm-cell"></div></div>
+<div class="pm-item pm-item-7"><div class="pm-cell"><svg viewBox="0 0 21.333251953125 18.185546875" fill="none"><path d="M4.605402586755087 17.11284014580305H2.1989720766715113C1.5344561619958212 17.11284014580305 0.9957617828511082 16.597418856172784 0.9957617828511082 15.961638335755815V14.810411719601653C0.9957617828511082 12.902995740029978 2.6118598039494003 11.356756677246093 4.605402586755087 11.356756677246093H5.808597996911337M10.621454055857104 4.4494217864280525C10.621454055857104 6.356837765999727 9.005360995980196 7.903076828783612 7.01181821317451 7.903076828783612C5.018275430368822 7.903076828783612 3.4021823704919147 6.356837765999727 3.4021823704919147 4.4494217864280525C3.4021823704919147 2.5420058068563773 5.018275430368822 0.9957617828511082 7.01181821317451 0.9957617828511082C9.005360995980196 0.9957617828511082 10.621454055857104 2.5420058068563773 10.621454055857104 4.4494217864280525ZM19.574647808979833 6.244069203931232C19.78785629797647 6.447975402832031 19.95698433497229 6.690058200286155 20.072357538267624 6.95652540084484C20.187755547669877 7.2229677952966025 20.247141367641714 7.5085605042923325 20.247141367641714 7.796981109477198C20.247141367641714 8.085401714662064 20.187755547669877 8.370994423657795 20.072357538267624 8.637461624216478C19.95698433497229 8.903904018668241 19.78785629797647 9.146011622229286 19.574647808979833 9.349893015023165L12.272374889852834 16.336657060206214L8.215038429437682 17.11284014580305L9.026272544115644 13.230833249114282L16.328570269349562 6.244069203931232C16.54167953391851 6.040088586709666 16.794701824525347 5.878278351255904 17.073175180834394 5.767866369345022C17.351673343250365 5.6574543874341385 17.650165227845658 5.6006484025822125 17.951609039164698 5.6006484025822125C18.253052850483737 5.6006484025822125 18.55154473507903 5.6574543874341385 18.830042897495005 5.767866369345022C19.10851625380405 5.878278351255904 19.361538544410884 6.040088586709666 19.574647808979833 6.244069203931232Z" stroke="#FF8331" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"></path></svg> </div></div>
+<div class="pm-item pm-item-8"><div class="pm-cell"></div></div>
+<div class="pm-item pm-item-9"><div class="pm-cell"><svg viewBox="0 0 18 16.3515625" fill="none"><path d="M4.55555 4.348775H12.55555M4.55555 7.697525H9M16.1111 1H1.88889C1.65314 1 1.4270475 1.088205 1.26035 1.2452075C1.09365 1.4022125 1 1.615155 1 1.8371925V10.6875C1 10.909525 1.09365 11.122475 1.26035 11.279475C1.4270475 11.4365 1.65314 11.5247 1.88889 11.5247H6L9 15.35185L12 11.5247H16.1111C16.34685 11.5247 16.57295 11.4365 16.73965 11.279475C16.90635 11.122475 17 10.909525 17 10.6875V1.8371925C17 1.615155 16.90635 1.4022125 16.73965 1.2452075C16.57295 1.088205 16.34685 1 16.1111 1Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg> </div></div>
+<div class="pm-item pm-item-10"><div class="pm-cell"></div></div>
+<div class="pm-item pm-item-11"><div class="pm-cell"></div></div>
+<div class="pm-item pm-item-12 pm-item--gallery"><div class="pm-gallery" data-slide-duration="300" data-review-carousel="1" role="region" aria-label="Отзывы клиентов: рекомендательные письма" aria-roledescription="карусель"><div class="pm-gallery-stage"><div class="pm-gallery-image pm-review-window"><div class="pm-review-strip"><div class="pm-review-track"><button class="pm-review-document" type="button" data-review-index="0" data-zoom-image="https://pr-up.ru/assets/company-pages/source/f72e6e14c693e8a35d11.jpg" aria-label="Открыть: Рекомендательное письмо: Goldenmed"><img src="https://pr-up.ru/assets/company-pages/source/f72e6e14c693e8a35d11.jpg" alt="Рекомендательное письмо: Goldenmed" loading="eager" decoding="async"></button><button class="pm-review-document" type="button" data-review-index="1" data-zoom-image="https://pr-up.ru/assets/company-pages/source/068420e5fdc25ed784d1.jpg" aria-label="Открыть: Рекомендательное письмо: Carptoday"><img src="https://pr-up.ru/assets/company-pages/source/068420e5fdc25ed784d1.jpg" alt="Рекомендательное письмо: Carptoday" loading="lazy" decoding="async"></button><button class="pm-review-document" type="button" data-review-index="2" data-zoom-image="https://pr-up.ru/assets/company-pages/source/a93041ca337b32322676.jpg" aria-label="Открыть: Рекомендательное письмо: Врач на дом"><img src="https://pr-up.ru/assets/company-pages/source/a93041ca337b32322676.jpg" alt="Рекомендательное письмо: Врач на дом" loading="lazy" decoding="async"></button><button class="pm-review-document" type="button" data-review-index="3" data-zoom-image="https://pr-up.ru/assets/company-pages/source/f19744d53c6c76f0f95e.jpg" aria-label="Открыть: Рекомендательное письмо: Альтамед"><img src="https://pr-up.ru/assets/company-pages/source/f19744d53c6c76f0f95e.jpg" alt="Рекомендательное письмо: Альтамед" loading="lazy" decoding="async"></button><button class="pm-review-document" type="button" data-review-index="4" data-zoom-image="https://pr-up.ru/assets/company-pages/source/cb32b61a8ec5f6ea6ffd.jpg" aria-label="Открыть: Рекомендательное письмо: Интеркоммерц"><img src="https://pr-up.ru/assets/company-pages/source/cb32b61a8ec5f6ea6ffd.jpg" alt="Рекомендательное письмо: Интеркоммерц" loading="lazy" decoding="async"></button><button class="pm-review-document" type="button" data-review-index="5" data-zoom-image="https://pr-up.ru/assets/company-pages/source/daf90f9706d7f72ae3df.jpg" aria-label="Открыть: Рекомендательное письмо: Гидрофорс"><img src="https://pr-up.ru/assets/company-pages/source/daf90f9706d7f72ae3df.jpg" alt="Рекомендательное письмо: Гидрофорс" loading="lazy" decoding="async"></button><button class="pm-review-document" type="button" data-review-index="6" data-zoom-image="https://pr-up.ru/assets/company-pages/source/29ee75a18d829a9a9025.jpg" aria-label="Открыть: Рекомендательное письмо: ODesign"><img src="https://pr-up.ru/assets/company-pages/source/29ee75a18d829a9a9025.jpg" alt="Рекомендательное письмо: ODesign" loading="lazy" decoding="async"></button><button class="pm-review-document" type="button" data-review-index="7" data-zoom-image="https://pr-up.ru/assets/company-pages/source/0fbda9773b105b152824.jpg" aria-label="Открыть: Рекомендательное письмо: Willagency"><img src="https://pr-up.ru/assets/company-pages/source/0fbda9773b105b152824.jpg" alt="Рекомендательное письмо: Willagency" loading="lazy" decoding="async"></button><button class="pm-review-document" type="button" data-review-index="8" data-zoom-image="https://pr-up.ru/assets/company-pages/source/7e0fc69ad80d9e4a981d.jpg" aria-label="Открыть: Рекомендательное письмо: Ампир Стиль"><img src="https://pr-up.ru/assets/company-pages/source/7e0fc69ad80d9e4a981d.jpg" alt="Рекомендательное письмо: Ампир Стиль" loading="lazy" decoding="async"></button><button class="pm-review-document" type="button" data-review-index="9" data-zoom-image="https://pr-up.ru/assets/company-pages/source/784ec96eab743796b0df.jpg" aria-label="Открыть: Рекомендательное письмо: Отзыв клиента №10"><img src="https://pr-up.ru/assets/company-pages/source/784ec96eab743796b0df.jpg" alt="Рекомендательное письмо: Отзыв клиента №10" loading="lazy" decoding="async"></button><button class="pm-review-document" type="button" data-review-index="10" data-zoom-image="https://pr-up.ru/assets/company-pages/source/d89aeadd9d6d80f6cb9c.jpg" aria-label="Открыть: Рекомендательное письмо: Отзыв клиента №11"><img src="https://pr-up.ru/assets/company-pages/source/d89aeadd9d6d80f6cb9c.jpg" alt="Рекомендательное письмо: Отзыв клиента №11" loading="lazy" decoding="async"></button><button class="pm-review-document" type="button" data-review-index="11" data-zoom-image="https://pr-up.ru/assets/company-pages/source/55698d5d42cb13018491.jpg" aria-label="Открыть: Рекомендательное письмо: Отзыв клиента №12"><img src="https://pr-up.ru/assets/company-pages/source/55698d5d42cb13018491.jpg" alt="Рекомендательное письмо: Отзыв клиента №12" loading="lazy" decoding="async"></button><button class="pm-review-document" type="button" data-review-index="12" data-zoom-image="https://pr-up.ru/assets/company-pages/source/5ed3e5b47a83bdab7d43.jpg" aria-label="Открыть: Рекомендательное письмо: Отзыв клиента №13"><img src="https://pr-up.ru/assets/company-pages/source/5ed3e5b47a83bdab7d43.jpg" alt="Рекомендательное письмо: Отзыв клиента №13" loading="lazy" decoding="async"></button></div></div></div></div><button class="pm-gallery-prev" type="button" data-step="-1" aria-label="Предыдущее письмо"><svg viewBox="0 0 94 94" fill="none"><path d="M39 68L60 47L39 26" stroke="black" vector-effect="non-scaling-stroke" style="stroke-width: 1px; stroke: rgb(255, 255, 255);"></path></svg></button><button class="pm-gallery-next" type="button" data-step="1" aria-label="Следующее письмо"><svg viewBox="0 0 94 94" fill="none"><path d="M39 68L60 47L39 26" stroke="black" vector-effect="non-scaling-stroke" style="stroke-width: 1px; stroke: rgb(255, 255, 255);"></path></svg></button><span class="pm-review-status" role="status" aria-live="polite"></span></div></div>
+</section>
+<section class="pg-preview-block pg-preview-faq" aria-labelledby="faq-title">
+      <h2 id="faq-title">Вопросы и ответы</h2>
       <div class="faq-list">
         <details class="disclosure">
-          <summary>Как считается тестовый период? <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path class="vertical" d="M12 5v14"/></svg></summary>
+          <summary>Как считается тестовый период? <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"></path><path class="vertical" d="M12 5v14"></path></svg></summary>
           <p>10 дней считаются со старта работ и оплаты 1 ₽. Подготовка и запуск входят в этот срок.</p>
         </details>
         <details class="disclosure">
-          <summary>Сколько выделить на рекламу? <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path class="vertical" d="M12 5v14"/></svg></summary>
+          <summary>Сколько выделить на рекламу? <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"></path><path class="vertical" d="M12 5v14"></path></svg></summary>
           <p>Бюджет зависит от ниши и конкуренции. Оценим стоимость трафика и согласуем сумму до запуска. Ориентир для старта — бюджет на 100 кликов в неделю на кампанию.</p>
         </details>
         <details class="disclosure">
-          <summary>Что останется у меня после теста? <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path class="vertical" d="M12 5v14"/></svg></summary>
+          <summary>Что останется у меня после теста? <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"></path><path class="vertical" d="M12 5v14"></path></svg></summary>
           <p>Кабинет, кампании и все настройки. Доступ к статистике и расходам будет у вас с начала работ.</p>
         </details>
         <details class="disclosure">
-          <summary>У меня уже работает Директ. С чего начнём? <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path class="vertical" d="M12 5v14"/></svg></summary>
+          <summary>У меня уже работает Директ. С чего начнём? <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"></path><path class="vertical" d="M12 5v14"></path></svg></summary>
           <p>Бесплатно проверим действующие кампании и покажем, какие настройки стоит изменить в первую очередь.</p>
         </details>
       </div>
     </section>
-
-    <section class="frame section request" id="request" aria-labelledby="request-title">
-      <h2 id="request-title">Обсудим запуск вашей рекламы</h2>
+<section class="pg-preview-block pg-preview-contact" id="request" aria-labelledby="request-title">
+      <h2 id="request-title">Получайте больше заявок из Яндекс Директ</h2>
       <p class="section-intro">Посмотрим сайт, предложим рекламный бюджет и согласуем план теста.</p>
       <div class="actions">
-        <a class="button button-primary" href="mailto:sale@pr-up.ru?subject=%D0%A2%D0%B5%D1%81%D1%82%20%D0%AF%D0%BD%D0%B4%D0%B5%D0%BA%D1%81%20%D0%94%D0%B8%D1%80%D0%B5%D0%BA%D1%82%D0%B0%20%D0%B7%D0%B0%201%20%E2%82%BD">Написать в Promo Group <svg class="icon icon-arrow" aria-hidden="true"><use href="#arrow"/></svg></a>
+        <a class="button button-primary" href="mailto:sale@pr-up.ru?subject=%D0%A2%D0%B5%D1%81%D1%82%20%D0%AF%D0%BD%D0%B4%D0%B5%D0%BA%D1%81%20%D0%94%D0%B8%D1%80%D0%B5%D0%BA%D1%82%D0%B0%20%D0%B7%D0%B0%201%20%E2%82%BD">Написать в Promo Group <svg class="icon icon-arrow" aria-hidden="true"><use href="#arrow"></use></svg></a>
         <a class="button button-secondary" href="tel:+78005009545">Позвонить в Promo Group</a>
       </div>
     </section>
-  </main>
-
-  <footer class="foot">
-    <div class="frame foot-inner">
-      <a class="brand" href="https://pr-up.ru/" aria-label="Основной сайт Promo Group">
-        <img src="https://pr-up.ru/assets/pg-logo-mark.png" width="25" height="31" alt="">
-        <img src="https://pr-up.ru/assets/pg-logo-word.svg" width="142" height="20" alt="Promo Group">
-      </a>
-      <p>Концепт посадочной страницы</p>
-      <a href="mailto:sale@pr-up.ru">sale@pr-up.ru</a>
+</main>
+<div id="pg-site-footer">
+<footer class="pgf-footer" aria-label="Контакты и разделы сайта Promo Group">
+  <div class="pgf-inner">
+    <div class="pgf-layout">
+      <div class="pgf-contact-column">
+<div class="pgf-brand">
+          <a class="pgf-logo" href="https://pr-up.ru/" aria-label="Promo Group — главная">
+            <img class="pgf-mark" src="https://pr-up.ru/assets/pg-logo-mark.png" alt="" width="25" height="31">
+            <img class="pgf-word" src="https://pr-up.ru/assets/pg-logo-word.svg" alt="Promo Group" width="187" height="26">
+          </a>
+          <p class="pgf-tagline">Комплексное увеличение продаж</p>
+        </div>
+<div class="pgf-contacts">
+          <a class="pgf-phone" href="tel:+78005009545">8 800 500-95-45</a>
+          <a class="pgf-secondary-phone" href="tel:+74996382517">+7 499 638-25-17</a>
+          <a class="pgf-mail" href="mailto:sale@pr-up.ru">sale@pr-up.ru</a>
+          <p class="pgf-hours">Пн–Пт, 9:00–19:00</p>
+        </div>
+      </div>
+<nav class="pgf-navigation" aria-label="Разделы сайта">
+          <details open>
+            <summary>Компания<svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path></svg></summary>
+            <div class="pgf-links">
+              <a href="https://pr-up.ru/about/company/">О нас</a>
+              <a href="https://pr-up.ru/prices/">Цены</a>
+              <a href="https://pr-up.ru/portfolio/">Клиенты</a>
+              <a href="https://pr-up.ru/rekomendacii/">Рекомендации</a>
+              <a href="https://pr-up.ru/contacts/">Контакты</a>
+            </div>
+          </details>
+          <details open>
+            <summary>Услуги<svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path></svg></summary>
+            <div class="pgf-links">
+              <a href="https://pr-up.ru/services/context/">Контекстная реклама</a>
+              <a href="https://pr-up.ru/services/seo/">SEO-продвижение</a>
+              <a href="https://pr-up.ru/services/map/">Яндекс Карты</a>
+              <a href="https://pr-up.ru/services/e-com/">Маркетплейсы</a>
+              <a href="https://pr-up.ru/service/tekhnicheskaya-podderzhka-internet-sajta/">Техническая поддержка</a>
+            </div>
+          </details>
+        </nav>
+<div class="pgf-office">
+          <h2>Наш офис</h2>
+          <address class="pgf-address">Москва, Рязанский<br> проспект, 10, стр. 18,<br> БЦ «Хамелеон»</address>
+          <p class="pgf-metro">Метро «Стахановская»</p>
+          
+          <a class="pgf-route" href="https://yandex.ru/maps/org/promo_grupp/1041538805" target="_blank" rel="noopener noreferrer">Открыть в Яндекс Картах<svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 7h10v10M7 17 17 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+        </div>
+<a class="pgf-map" href="https://yandex.ru/maps/org/promo_grupp/1041538805" target="_blank" rel="noopener noreferrer" aria-label="Открыть Promo Group в Яндекс Картах">
+            <img src="https://pr-up.ru/assets/promo-office-map-20261105-readable.png" width="650" height="400" loading="lazy" decoding="async" alt="Карта Яндекса с меткой офиса Promo Group рядом с метро Стахановская">
+          </a>
+    </div>
+<div class="pgf-bottom">
+        <span>© 2007–2026 ООО «Промо Групп»</span>
+        <div class="pgf-legal">
+          <a href="https://pr-up.ru/privacy/">Политика конфиденциальности</a>
+          <a href="https://pr-up.ru/public_oferta.pdf">Публичная оферта</a>
+        </div>
+      </div>
     </div>
   </footer>
+</div>
+<dialog class="pg-preview-lightbox" aria-label="Просмотр документа"><button type="button" aria-label="Закрыть просмотр">×</button><img alt=""></dialog>
 </body>
 </html>
