@@ -14,8 +14,7 @@
 .pg-case-slide[hidden]{display:none!important}
 .pg-preview .pg-case-slide h3{margin:0 0 30px;font:700 clamp(28px,2.55vw,36px)/1.2 PromoContextGrotesque,Arial,sans-serif;letter-spacing:-.025em;text-transform:none;text-align:left;color:var(--brand-ink);text-wrap:pretty}
 .pg-case-slide mark{padding:0 .06em;color:var(--brand-orange);background:linear-gradient(transparent 68%,var(--brand-soft) 68%);box-decoration-break:clone;-webkit-box-decoration-break:clone}
-.pg-case-slide .pg-case-glow{color:var(--brand-ink);text-shadow:0 0 4px rgba(255,131,49,.56),0 0 12px rgba(255,131,49,.27)}
-.pg-case-slide .pg-case-glow mark{background:none;color:var(--brand-orange);text-shadow:0 0 5px rgba(255,131,49,.48),0 0 13px rgba(255,131,49,.24)}
+.pg-case-slide .pg-case-glow{color:var(--brand-orange);text-shadow:none}
 .pg-case-layout{display:grid;grid-template-columns:minmax(0,1.02fr) minmax(0,1fr);gap:34px;align-items:start}
 .pg-case-copy{min-width:0}
 .pg-case-text+.pg-case-text{margin-top:20px}
