@@ -1,8 +1,8 @@
 /* Live case studies share the landing page typography and orange marker. */
 .pg-preview .pg-case-studies{margin-block:76px 84px}
 .pg-case-studies__head{display:flex;align-items:center;justify-content:space-between;gap:24px;margin-bottom:30px}
-.pg-preview .pg-case-studies h2{margin:0;font:750 48px/1.1 PromoContextGrotesque,Arial,sans-serif;letter-spacing:-.025em;text-transform:none;text-align:left}
-.pg-case-studies h2::after{content:"";display:block;width:72px;height:3px;margin-top:14px;background:var(--brand-edge)}
+.pg-preview :is(.pg-case-studies,.pg-pricing) h2{margin:0;font:750 48px/1.1 PromoContextGrotesque,Arial,sans-serif;letter-spacing:-.025em;text-transform:none;text-align:left}
+:is(.pg-case-studies,.pg-pricing) h2::after{content:"";display:block;width:72px;height:3px;margin-top:14px;background:var(--brand-edge)}
 .pg-case-controls{display:flex;align-items:center;gap:12px;flex:none}
 .pg-case-counter{min-width:55px;text-align:center;font-size:15px;font-weight:650;color:var(--brand-muted);font-variant-numeric:tabular-nums}
 .pg-case-controls button{display:grid;place-items:center;width:48px;height:48px;padding:0;border:1px solid var(--brand-orange);border-radius:50%;background:#fff;color:var(--brand-ink);cursor:pointer}
@@ -48,8 +48,8 @@
 @media(max-width:760px){
  .pg-preview .pg-case-studies{margin-block:58px 64px}
  .pg-case-studies__head{margin-bottom:24px;gap:16px}
- .pg-preview .pg-case-studies h2{font-size:38px}
- .pg-case-studies h2::after{width:58px;margin-top:11px}
+ .pg-preview :is(.pg-case-studies,.pg-pricing) h2{font-size:38px}
+ :is(.pg-case-studies,.pg-pricing) h2::after{width:58px;margin-top:11px}
  .pg-case-controls{gap:8px}
  .pg-case-controls button{width:44px;height:44px}
  .pg-case-counter{font-size:13px;min-width:42px}
@@ -69,7 +69,7 @@
 @media(max-width:359px){
  .pg-case-slide{padding:22px 17px}
  .pg-preview .pg-case-slide h3{font-size:25px}
- .pg-preview .pg-case-studies h2{font-size:34px}
+ .pg-preview :is(.pg-case-studies,.pg-pricing) h2{font-size:34px}
  .pg-case-studies__head .pg-case-counter{display:none}
  .pg-case-statistics{gap:13px}
  .pg-case-stats dd{font-size:18px}

@@ -1,0 +1,29 @@
+/* One responsive pricing layout with the original commercial terms. */
+.pg-preview .pg-pricing{margin-block:0 80px}
+.pg-pricing__head{margin-bottom:30px}
+.pg-pricing-panel{padding:32px;border-radius:28px;background:var(--brand-ink)}
+.pg-pricing-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;align-items:stretch}
+.pg-pricing-plan{display:flex;flex-direction:column;gap:24px;min-width:0}
+.pg-pricing-card{flex:1;display:flex;flex-direction:column;min-width:0;padding:24px;border-radius:16px;background:#fff;color:var(--brand-ink)}
+.pg-preview .pg-pricing-plan h3{margin:0 0 22px;padding:6px 10px;border:1px solid var(--brand-orange);border-radius:100px;font:750 30px/1.2 PromoContextGrotesque,Arial,sans-serif;letter-spacing:-.02em;text-align:center;color:var(--brand-orange)}
+.pg-pricing-price{min-height:100px}
+.pg-pricing-label,.pg-pricing-features dt{font-size:14px;line-height:1.4;font-weight:400;color:var(--brand-muted)}
+.pg-preview .pg-pricing-price p{display:flex;align-items:baseline;flex-wrap:wrap;gap:5px 8px;margin:5px 0 0;line-height:1.2}
+.pg-pricing-price strong{font-size:34px;font-weight:750;letter-spacing:-.025em;white-space:nowrap}
+.pg-pricing-price p>span{font-size:19px;font-weight:650;white-space:nowrap}
+.pg-pricing-price small{display:block;margin-top:5px;font-size:14px;line-height:1.4;color:var(--brand-muted)}
+.pg-pricing-features{display:grid;gap:0;margin:0}
+.pg-pricing-features>div{padding:16px 0;border-top:1px solid #e9e2dc}
+.pg-pricing-features dd{margin:6px 0 0;font-size:19px;line-height:1.35;font-weight:650;letter-spacing:-.015em;overflow-wrap:break-word}
+.pg-pricing-features>div:last-child dd{min-height:2.7em}
+.pg-pricing-features mark{padding:0 .06em;color:var(--brand-orange);background:linear-gradient(transparent 68%,var(--brand-soft) 68%);box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.pg-preview .pg-pricing-guarantee{margin:0;padding-top:16px;border-top:1px solid #e9e2dc;font-size:17px;font-weight:650;line-height:1.4}
+.pg-pricing-guarantee span{font-weight:400;color:var(--brand-muted)}
+.pg-preview .pg-pricing .button-primary{display:inline-flex;align-items:center;justify-content:center;gap:12px;text-decoration:none;align-self:center;min-height:58px;max-width:100%;padding:15px 32px;border:2px solid transparent;border-radius:100px;background:var(--brand-action) padding-box,var(--brand-edge) border-box;color:#fff;font:700 19px/1.3 PromoContextGrotesque,Arial,sans-serif;white-space:nowrap;text-shadow:0 1px 2px rgba(125,53,9,.22)}
+.pg-preview .pg-pricing .button-primary:hover{background:var(--brand-ink);border-color:var(--brand-orange);color:#fff;filter:none}
+.pg-pricing .button-primary:focus-visible{outline-color:var(--brand-orange);outline-offset:5px}
+@media(max-width:1100px) and (min-width:1001px){.pg-pricing-panel{padding:24px}.pg-pricing-grid{gap:18px}.pg-pricing-card{padding:20px}.pg-preview .pg-pricing .button-primary{padding-inline:22px}}
+@media(max-width:1000px){.pg-pricing-grid{grid-template-columns:minmax(0,1fr);max-width:480px;margin-inline:auto;gap:36px}.pg-pricing-plan{gap:20px}.pg-pricing-price{min-height:0;margin-bottom:22px}.pg-pricing-features>div:last-child dd{min-height:0}}
+@media(max-width:760px){.pg-pricing__head{margin-bottom:24px}.pg-preview .pg-pricing{margin-bottom:64px}}
+@media(max-width:639px){.pg-pricing-panel{padding:22px 18px;border-radius:24px}.pg-pricing-card{padding:22px}.pg-preview .pg-pricing-plan h3{font-size:28px;margin-bottom:20px}.pg-pricing-price strong{font-size:32px}.pg-pricing-features dd{font-size:18px}.pg-preview .pg-pricing .button-primary{width:100%;max-width:330px;font-size:18px;padding-inline:18px}}
+@media(max-width:359px){.pg-pricing-panel{padding:20px 14px}.pg-pricing-card{padding:20px 17px}.pg-preview .pg-pricing-plan h3{font-size:26px}.pg-pricing-price strong{font-size:30px}.pg-pricing-price p>span{font-size:17px}.pg-pricing-features dd{font-size:17px}.pg-preview .pg-pricing .button-primary{font-size:16px;padding-inline:12px;gap:8px}}
