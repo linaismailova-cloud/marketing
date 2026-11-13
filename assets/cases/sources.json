@@ -1,0 +1,194 @@
+[
+  {
+    "id": "aquadoor",
+    "name": "Аквакомпозит",
+    "url": "https://pr-up.ru/upload/iblock/d95/fx05nbi9liyru6mu1zhojo004rsjou3x/10.png",
+    "original": {
+      "width": 3000,
+      "height": 1700
+    },
+    "visibleRegion": {
+      "x": 1530,
+      "y": 450,
+      "width": 1440,
+      "height": 1040
+    },
+    "asset": "aquadoor.webp"
+  },
+  {
+    "id": "melodiya-sna",
+    "name": "Мелодия сна",
+    "url": "https://pr-up.ru/upload/iblock/7f1/1v102heesnj3zo0zkass4cawfio2hlyq/11.png",
+    "original": {
+      "width": 3000,
+      "height": 1700
+    },
+    "visibleRegion": {
+      "x": 1530,
+      "y": 450,
+      "width": 1440,
+      "height": 1040
+    },
+    "asset": "melodiya-sna.webp"
+  },
+  {
+    "id": "antcol",
+    "name": "Академия туризма в Анталии",
+    "url": "https://pr-up.ru/upload/iblock/802/oe0r3txyt3wq0l4edhfu8tcqk3gm06hv/12.png",
+    "original": {
+      "width": 3000,
+      "height": 1700
+    },
+    "visibleRegion": {
+      "x": 1530,
+      "y": 450,
+      "width": 1440,
+      "height": 1040
+    },
+    "asset": "antcol.webp"
+  },
+  {
+    "id": "altamed",
+    "name": "Альтамед-С",
+    "url": "https://pr-up.ru/upload/iblock/649/vjfre8cbymvvsp0t5fv1e54ncgkzm8n4/13.png",
+    "original": {
+      "width": 3000,
+      "height": 1700
+    },
+    "visibleRegion": {
+      "x": 1530,
+      "y": 450,
+      "width": 1440,
+      "height": 1040
+    },
+    "asset": "altamed.webp"
+  },
+  {
+    "id": "diskus",
+    "name": "Diskus",
+    "url": "https://pr-up.ru/upload/iblock/f67/vgexerr63v8lyno5j6zn9dagpexiqf5z/15.png",
+    "original": {
+      "width": 3000,
+      "height": 1700
+    },
+    "visibleRegion": {
+      "x": 1530,
+      "y": 450,
+      "width": 1440,
+      "height": 1040
+    },
+    "asset": "diskus.webp"
+  },
+  {
+    "id": "comfort",
+    "name": "Comfort — недвижимость",
+    "url": "https://pr-up.ru/upload/iblock/856/rgnvbwbqu2m3rha0eu0bceh8qqnnx6mp/16.png",
+    "original": {
+      "width": 3000,
+      "height": 1700
+    },
+    "visibleRegion": {
+      "x": 1530,
+      "y": 450,
+      "width": 1440,
+      "height": 1040
+    },
+    "asset": "comfort.webp"
+  },
+  {
+    "id": "bmwedding",
+    "name": "BM Weddings & Events",
+    "url": "https://pr-up.ru/upload/iblock/bac/0guaxk98y297yjmc5lyktcf242ege0x7/17.png",
+    "original": {
+      "width": 3000,
+      "height": 1700
+    },
+    "visibleRegion": {
+      "x": 1530,
+      "y": 450,
+      "width": 1440,
+      "height": 1040
+    },
+    "asset": "bmwedding.webp"
+  },
+  {
+    "id": "dozari",
+    "name": "Dozari Karting",
+    "url": "https://pr-up.ru/upload/iblock/480/ffrcig7i8x96djk574ljrr5rr05rndpw/18.png",
+    "original": {
+      "width": 3000,
+      "height": 1700
+    },
+    "visibleRegion": {
+      "x": 1530,
+      "y": 450,
+      "width": 1440,
+      "height": 1040
+    },
+    "asset": "dozari.webp"
+  },
+  {
+    "id": "ecomarka",
+    "name": "Экомарка",
+    "url": "https://pr-up.ru/upload/iblock/ebb/w89s0wy1wumkzxr5aiugbenjiil6g4ic/19.png",
+    "original": {
+      "width": 3000,
+      "height": 1700
+    },
+    "visibleRegion": {
+      "x": 1530,
+      "y": 450,
+      "width": 1440,
+      "height": 1040
+    },
+    "asset": "ecomarka.webp"
+  },
+  {
+    "id": "citizenship",
+    "name": "Юридическое сопровождение",
+    "url": "https://pr-up.ru/upload/iblock/439/yjayqprssybj7mhdayst7eibjlp6dadf/20.png",
+    "original": {
+      "width": 3000,
+      "height": 1700
+    },
+    "visibleRegion": {
+      "x": 1530,
+      "y": 450,
+      "width": 1440,
+      "height": 1040
+    },
+    "asset": "citizenship.webp"
+  },
+  {
+    "id": "biotechno",
+    "name": "Биотехно",
+    "url": "https://pr-up.ru/upload/iblock/a48/tpihs39sc3jq342uamloraqlqms96l1c/21.png",
+    "original": {
+      "width": 3000,
+      "height": 1700
+    },
+    "visibleRegion": {
+      "x": 1530,
+      "y": 450,
+      "width": 1440,
+      "height": 1040
+    },
+    "asset": "biotechno.webp"
+  },
+  {
+    "id": "tk-alkom",
+    "name": "ТК Альком",
+    "url": "https://pr-up.ru/upload/iblock/10d/n0dgk6x4wprrmk5f4y3u262rr9rubaw2/14.png",
+    "original": {
+      "width": 3000,
+      "height": 1700
+    },
+    "visibleRegion": {
+      "x": 1530,
+      "y": 450,
+      "width": 1440,
+      "height": 1040
+    },
+    "asset": "tk-alkom.webp"
+  }
+]
